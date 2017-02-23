@@ -2,13 +2,20 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "strictNullChecks": false,
+    "noUnusedLocals": true,
     "declaration": false,
     "noImplicitAny": false,
     "removeComments": true,
     "experimentalDecorators": true,
     "noLib": false,
     "jsx": "react",
-    "outDir": "dist"
+    "outDir": "dist",
+    "types": [
+      "react",
+      "react-dom",
+      "react-router"
+    ]
   },
   "exclude": [
     "node_modules"
