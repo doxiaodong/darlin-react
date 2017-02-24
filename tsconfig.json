@@ -8,7 +8,10 @@
     "noImplicitAny": false,
     "removeComments": true,
     "experimentalDecorators": true,
-    "noLib": false,
+    "lib": [
+      "es2015",
+      "dom"
+    ],
     "jsx": "react",
     "outDir": "dist",
     "types": [
