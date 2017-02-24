@@ -7,7 +7,11 @@ module.exports = function() {
       'main': './src/index.tsx'
     },
     resolve: {
-      extensions: ['.tsx', '.ts', '.jsx', '.js']
+      extensions: ['.tsx', '.ts', '.jsx', '.js'],
+      modules: [
+        './src',
+        'node_modules'
+      ]
     },
 
     module: {

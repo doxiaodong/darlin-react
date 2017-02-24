@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { testApi } from 'api/test'
 
 export default class ViewIndex extends React.Component<{}, {}> {
 
@@ -10,6 +11,12 @@ export default class ViewIndex extends React.Component<{}, {}> {
     })
     console.log(x)
     return x
+  }
+
+  componentDidMount() {
+    testApi().then((data) => {
+      console.log('fetch: ', data)
+    })
   }
 
   render() {
