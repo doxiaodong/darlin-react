@@ -23,7 +23,7 @@
   "devDependencies": {
     "@types/react": "^15.0.12",
     "@types/react-dom": "^0.14.23",
-    "@types/react-router": "^3.0.4",
+    "@types/react-router": "^3.0.5",
     "html-webpack-plugin": "^2.28.0",
     "ts-loader": "^2.0.1",
     "tslint": "^4.4.2",
@@ -35,7 +35,7 @@
     "webpack-merge": "^3.0.0"
   },
   "dependencies": {
-    "intercept-fetch": "^1.0.0-beta.3",
+    "intercept-fetch": "^1.0.0-rc.3",
     "mobx": "^3.1.0",
     "mobx-react": "^4.1.0",
     "react": "^15.4.2",
