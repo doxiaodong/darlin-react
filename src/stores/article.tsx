@@ -3,7 +3,7 @@ import {
   action
 } from 'mobx'
 import * as base64 from 'js-base64'
-import { getList } from 'app/api/article'
+import { getList } from 'api/article'
 export class ArticleStore {
   @observable articles: any[] = []
   totalArticles: any[] = []

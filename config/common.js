@@ -8,12 +8,12 @@ const helpers = require('./helpers')
 module.exports = function() {
   return {
     entry: {
-      'main': './src/app/index.tsx'
+      'main': './src/index.tsx'
     },
     resolve: {
       extensions: ['.tsx', '.ts', '.jsx', '.js'],
       alias: {
-        styles: helpers.root('src/app/styles')
+        styles: helpers.root('src/styles')
       },
       modules: [
         './src',

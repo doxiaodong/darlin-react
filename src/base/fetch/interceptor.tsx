@@ -2,7 +2,7 @@ import { Interceptor } from 'intercept-fetch'
 import {
   getCookie,
   getAESToken
-} from 'app/base/utils'
+} from 'base/utils'
 
 export const corsInterceptor = new Interceptor({
   cors: {

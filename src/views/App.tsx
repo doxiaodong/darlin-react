@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { CompNavbar } from 'app/components/Navbar'
+import { CompNavbar } from 'components/Navbar'
 
 export class App extends React.Component<{}, {}> {
 

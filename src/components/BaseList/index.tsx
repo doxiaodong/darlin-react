@@ -5,7 +5,7 @@ import {
   ListItem
 } from 'material-ui/List'
 import Subheader from 'material-ui/Subheader'
-import { transformDate } from 'app/base/transform/date'
+import { transformDate } from 'base/transform/date'
 
 import * as style from './style.scss'
 

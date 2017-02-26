@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { observer } from 'mobx-react'
-import { CompPage } from 'app/components/Page'
-import { CompBaseList } from 'app/views/Article/components/BaseList'
+import { CompPage } from 'components/Page'
+import { CompBaseList } from 'components/BaseList'
 
-import articleStore from 'app/stores/article'
+import articleStore from 'stores/article'
 
 @observer
 export class ViewHome extends React.Component<{}, {}> {

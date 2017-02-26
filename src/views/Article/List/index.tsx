@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { observer } from 'mobx-react'
 import RaisedButton from 'material-ui/RaisedButton'
-import { CompPage } from 'app/components/Page'
-import { CompBaseList } from '../components/BaseList'
-import { CompCategoryWithRouter } from '../components/Category'
-import articleStore from 'app/stores/article'
+import { CompPage } from 'components/Page'
+import { CompBaseList } from 'components/BaseList'
+import { CompCategoryWithRouter } from 'components/Category'
+import articleStore from 'stores/article'
 
 import * as style from './style.scss'
 

@@ -9,9 +9,9 @@ import {
   Router,
   Route
 } from 'react-router'
-import { App } from 'app/views/App'
-import { ViewHome } from './views/Home'
-import { ViewArticleList } from './views/Article/List'
+import { App } from 'views/App'
+import { ViewHome } from 'views/Home'
+import { ViewArticleList } from 'views/Article/List'
 
 injectTapEventPlugin()
 

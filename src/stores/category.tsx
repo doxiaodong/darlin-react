@@ -2,8 +2,8 @@ import {
   observable,
   action
 } from 'mobx'
-import { getCategories } from 'app/api/article'
-import { LocalStorage } from 'app/base/local-storage'
+import { getCategories } from 'api/article'
+import { LocalStorage } from 'base/local-storage'
 
 export class CategoryStore {
 

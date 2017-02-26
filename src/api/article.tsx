@@ -1,7 +1,7 @@
 import {
   fetchClient,
   apiPrefix
-} from 'app/base/fetch'
+} from 'base/fetch'
 
 export function getCategories() {
   return fetchClient.get(`${apiPrefix}/article/categories/?format=json`)

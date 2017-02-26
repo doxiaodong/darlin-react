@@ -10,8 +10,8 @@ import {
 } from 'material-ui/List'
 import Subheader from 'material-ui/Subheader'
 import { observer } from 'mobx-react'
-import categoryStore from './store'
-import articleStore from 'app/stores/article'
+import categoryStore from 'stores/category'
+import articleStore from 'stores/article'
 
 import * as style from './style.scss'
 
