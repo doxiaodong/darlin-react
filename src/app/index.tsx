@@ -18,14 +18,12 @@ injectTapEventPlugin()
 render(
   (
     <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-      <div>
-        <Router history={browserHistory}>
-          <Route path='' component={App}>
-            <Route path='/' component={ViewHome} />
-            <Route path='/article/:category' component={ViewArticleList} />
-          </Route>
-        </Router>
-      </div>
+      <Router history={browserHistory}>
+        <Route path='' component={App}>
+          <Route path='/' component={ViewHome} />
+          <Route path='/article/:category' component={ViewArticleList} />
+        </Route>
+      </Router>
     </MuiThemeProvider>
   ),
   document.getElementById('app')

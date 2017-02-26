@@ -1,0 +1,12 @@
+@import '~styles/mixins';
+@import '~styles/variables';
+
+.active {
+  color: $active-color;
+}
+
+.container {
+  @media screen and (min-width: 768px) {
+    @include right-left(200px);
+  }
+}

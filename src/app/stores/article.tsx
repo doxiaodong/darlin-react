@@ -7,8 +7,9 @@ import { getList } from 'app/api/article'
 export class ArticleStore {
   @observable articles: any[] = []
 
-  @action getArticleList(category) {
+  @action getArticleList(category: string) {
     return getList(category).then((data) => {
+      this.articles = []
       return data.results.map((a) =>
         ({
           url: base64.Base64.encodeURI(a.url),

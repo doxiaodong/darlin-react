@@ -2,7 +2,7 @@ import * as React from 'react'
 import { observer } from 'mobx-react'
 import { CompPage } from 'app/components/Page'
 import { CompBaseList } from '../components/BaseList'
-import { CompCategory } from '../components/Category'
+import { CompCategoryWithRouter } from '../components/Category'
 
 import articleStore, { ArticleStore } from 'app/stores/article'
 import categoryStore from '../components/Category/store'
@@ -10,7 +10,7 @@ import categoryStore from '../components/Category/store'
 import * as style from './style.scss'
 
 @observer
-export class ViewArticleList extends React.Component<{ articleStore: ArticleStore, params }, {}> {
+export class ViewArticleList extends React.Component<{ articleStore: ArticleStore, params?: any }, {}> {
 
   static defaultProps = {
     articleStore
@@ -25,9 +25,7 @@ export class ViewArticleList extends React.Component<{ articleStore: ArticleStor
       <CompPage title='首页'>
         <div className={style.container}>
           <div className={`${style.right} ${style.category}`}>
-            <div className={style.right}>
-              <CompCategory categoryStore={categoryStore} />
-            </div>
+            <CompCategoryWithRouter categoryStore={categoryStore} articleStore={articleStore} />
           </div>
           <div className={style.left}>
             <CompBaseList articles={this.props.articleStore.articles} />

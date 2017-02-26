@@ -26,6 +26,7 @@ export class CompBaseList extends React.Component<{ articles: any[] }, {}> {
       <List>
         <Subheader>文章列表</Subheader>
         {listItem}
+        {this.props.articles.length === 0 && <ListItem>暂无文章</ListItem>}
       </List>
     )
   }
