@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { observer } from 'mobx-react'
+import RaisedButton from 'material-ui/RaisedButton'
 import { CompPage } from 'app/components/Page'
 import { CompBaseList } from '../components/BaseList'
 import { CompCategoryWithRouter } from '../components/Category'
-
 import articleStore, { ArticleStore } from 'app/stores/article'
 import categoryStore from '../components/Category/store'
 
@@ -21,6 +21,9 @@ export class ViewArticleList extends React.Component<{ articleStore: ArticleStor
   }
 
   render() {
+    const moreButton = (
+      <RaisedButton label='加载更多' primary={true} onClick={this.props.articleStore.getMoreArticles} />
+    )
     return (
       <CompPage title='首页'>
         <div className={style.container}>
@@ -29,6 +32,7 @@ export class ViewArticleList extends React.Component<{ articleStore: ArticleStor
           </div>
           <div className={style.left}>
             <CompBaseList articles={this.props.articleStore.articles} />
+            {this.props.articleStore.hasMore && moreButton}
           </div>
         </div>
       </CompPage>

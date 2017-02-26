@@ -3,7 +3,7 @@ import * as React from 'react'
 import { render } from 'react-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
+// import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import {
   browserHistory,
   Router,
@@ -15,9 +15,17 @@ import { ViewArticleList } from './views/Article/List'
 
 injectTapEventPlugin()
 
+const theme = getMuiTheme({
+  palette: {
+    primary1Color: '#009688',
+    primary2Color: '#009688',
+    primary3Color: '#009688'
+  }
+})
+
 render(
   (
-    <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+    <MuiThemeProvider muiTheme={theme}>
       <Router history={browserHistory}>
         <Route path='' component={App}>
           <Route path='/' component={ViewHome} />

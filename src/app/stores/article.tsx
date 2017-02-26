@@ -6,10 +6,20 @@ import * as base64 from 'js-base64'
 import { getList } from 'app/api/article'
 export class ArticleStore {
   @observable articles: any[] = []
+  totalArticles: any[] = []
+  @observable hasMore: boolean = false
+  page: number = 1
+  category: string
 
-  @action getArticleList(category: string) {
-    return getList(category).then((data) => {
-      this.articles = []
+  @action getMoreArticles = () => {
+    return getList(this.category, this.page).then((data) => {
+      if (data.next) {
+        this.page++
+        this.hasMore = true
+      } else {
+        this.hasMore = false
+      }
+
       return data.results.map((a) =>
         ({
           url: base64.Base64.encodeURI(a.url),
@@ -22,8 +32,21 @@ export class ArticleStore {
       )
     })
       .then((articles) => {
-        this.articles = articles
+        this.totalArticles = this.totalArticles.concat(articles)
+        // TODO: add article search
+        this.articles = this.totalArticles.filter(() => true)
       })
+  }
+
+  @action getArticleList(category: string) {
+    this.hasMore = false
+    this.category = category
+
+    this.totalArticles = []
+    this.articles = []
+    this.page = 1
+
+    return this.getMoreArticles()
   }
 }
 
