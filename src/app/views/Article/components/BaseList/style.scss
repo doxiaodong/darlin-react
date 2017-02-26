@@ -1,0 +1,14 @@
+.article {
+  display: flex;
+}
+
+.title {
+  flex: 1;
+}
+
+.time {
+  flex: 1;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: right;
+}

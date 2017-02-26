@@ -1,0 +1,33 @@
+// 左右两栏
+@mixin left-right($left) {
+  & {
+    position: relative;
+  }
+  & > .left {
+    display: inline-block;
+    float: left;
+    width: $left;
+  }
+  & > .right {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: $left + 10px;
+  }
+}
+
+@mixin right-left($right) {
+  & {
+    position: relative;
+  }
+  & > .right {
+    display: inline-block;
+    float: right;
+    width: $right;
+  }
+  & > .left {
+    display: block;
+    box-sizing: border-box;
+    margin-right: $right + 10px;
+  }
+}

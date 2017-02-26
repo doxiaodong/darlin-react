@@ -1,0 +1,8 @@
+@import '~styles/variables';
+
+.page {
+  position: relative;
+  width: 100%;
+  max-width: $max-width;
+  margin: auto;
+}

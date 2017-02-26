@@ -18,7 +18,10 @@
     "types": [
       "react",
       "react-dom",
-      "react-router"
+      "react-router",
+      "react-tap-event-plugin",
+      "material-ui",
+      "crypto-js"
     ]
   },
   "exclude": [

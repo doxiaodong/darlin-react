@@ -1,0 +1,21 @@
+@import '~styles/mixins';
+@import '~styles/variables';
+
+.container {
+  @media screen and (min-width: 768px) {
+    @include right-left(200px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .category {
+    position: fixed!important;
+    z-index: $z-index;
+    margin: 0;
+    width: 100%!important;
+    height: 0;
+    max-width: $max-width;
+    @include right-left(200px);
+  }
+}
+

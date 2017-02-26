@@ -1,8 +1,11 @@
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
+const chalk = require('chalk')
 const commonConfig = require('./common')
 const helpers = require('./helpers')
 
+const isProxyProd = helpers.hasNpmFlag('proxy-prod')
+console.log(chalk.green('is proxy prod?'), isProxyProd ? chalk.green('true') : chalk.red('false'))
 const ENV = process.env.ENV = process.env.NODE_ENV = 'development'
 const METADATA = {
   baseUrl: '/',
@@ -60,14 +63,16 @@ module.exports = webpackMerge(commonConfig(), {
     },
     proxy: {
       "/api": {
-        target: 'https://api.darlin.me',
-        changeOrigin: true,
-        secure: false,
+        target: isProxyProd ? 'https://api.darlin.me' : 'http://0.0.0.0:9999',
+        changeOrigin: isProxyProd,
+        secure: !isProxyProd,
         pathRewrite: {
           '^/api': ''
         },
         onProxyReq: function(proxyReq, req, res) {
-          proxyReq.setHeader('referer', 'https://www.darlin.me')
+          if (isProxyProd) {
+            proxyReq.setHeader('referer', 'https://www.darlin.me')
+          }
         }
       }
     }
