@@ -4,6 +4,7 @@ import { CompPage } from 'components/Page'
 import { CompBaseList } from 'components/BaseList'
 
 import articleStore from 'stores/article'
+import i18nStore from 'stores/i18n'
 
 @observer
 export class ViewHome extends React.Component<{}, {}> {
@@ -17,8 +18,9 @@ export class ViewHome extends React.Component<{}, {}> {
   }
 
   render() {
+    const { t } = i18nStore
     return (
-      <CompPage title='首页'>
+      <CompPage title={t('common:home')}>
         <CompBaseList articles={articleStore.articles} />
       </CompPage>
     )

@@ -11,6 +11,7 @@ import {
 import Subheader from 'material-ui/Subheader'
 import { observer } from 'mobx-react'
 import categoryStore from 'stores/category'
+import i18nStore from 'stores/i18n'
 
 import * as style from './style.scss'
 
@@ -35,6 +36,7 @@ export class CompCategory extends React.Component<{
   }
 
   render() {
+    const { t } = i18nStore
     const listItem = categoryStore.categories.map((category) => {
       return (
         <ListItem key={category.key} value={category.key}>
@@ -51,7 +53,7 @@ export class CompCategory extends React.Component<{
             value={categoryStore.selectedCategoryKey}
             onChange={this.handleRequestChange}
           >
-            <Subheader>分类</Subheader>
+            <Subheader>{t('article:category')}</Subheader>
             {listItem}
           </SelectableList>
         </div>

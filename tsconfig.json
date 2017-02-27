@@ -19,6 +19,7 @@
       "react",
       "react-dom",
       "react-router",
+      "i18next",
       "react-tap-event-plugin",
       "material-ui",
       "crypto-js"

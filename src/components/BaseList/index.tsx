@@ -1,18 +1,27 @@
 import * as React from 'react'
 // import { Link } from 'react-router'
+import { observer } from 'mobx-react'
 import {
   List,
   ListItem
 } from 'material-ui/List'
 import Subheader from 'material-ui/Subheader'
 import { transformDate } from 'base/transform/date'
+import i18nStore from 'stores/i18n'
 
 import * as style from './style.scss'
 
+@observer
 export class CompBaseList extends React.Component<{ articles: any[] }, {}> {
 
+  componentDidMount() {
+    i18nStore.loadNamespaces(['article'])
+  }
+
   render() {
-    const listItem = this.props.articles.map((article) =>
+    const { articles } = this.props
+    const { t } = i18nStore
+    const listItem = articles.map((article) =>
       (
         <ListItem key={article.url}>
           <div className={style.article}>
@@ -24,9 +33,9 @@ export class CompBaseList extends React.Component<{ articles: any[] }, {}> {
     )
     return (
       <List>
-        <Subheader>文章列表</Subheader>
+        <Subheader>{t('article:articleList')}</Subheader>
         {listItem}
-        {this.props.articles.length === 0 && <ListItem>暂无文章</ListItem>}
+        {articles.length === 0 && <ListItem>{t('article:noArticle')}</ListItem>}
       </List>
     )
   }

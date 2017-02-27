@@ -5,6 +5,7 @@ import { CompPage } from 'components/Page'
 import { CompBaseList } from 'components/BaseList'
 import { CompCategoryWithRouter } from 'components/Category'
 import articleStore from 'stores/article'
+import i18nStore from 'stores/i18n'
 
 import * as style from './style.scss'
 
@@ -19,11 +20,12 @@ export class ViewArticleList extends React.Component<{ params?: any }, {}> {
   }
 
   render() {
+    const { t } = i18nStore
     const moreButton = (
-      <RaisedButton label='加载更多' primary={true} onClick={articleStore.getMoreArticles} />
+      <RaisedButton label={t('article:loadMore')} primary={true} onClick={articleStore.getMoreArticles} />
     )
     return (
-      <CompPage title='首页'>
+      <CompPage title={t('common:articles')}>
         <div className={style.container}>
           <div className={`${style.right} ${style.category}`}>
             <CompCategoryWithRouter />

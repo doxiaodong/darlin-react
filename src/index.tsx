@@ -12,8 +12,10 @@ import {
 import { App } from 'views/App'
 import { ViewHome } from 'views/Home'
 import { ViewArticleList } from 'views/Article/List'
+import i18nStore from 'stores/i18n'
 
 injectTapEventPlugin()
+i18nStore.init()
 
 const theme = getMuiTheme({
   palette: {
