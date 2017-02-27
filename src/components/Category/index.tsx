@@ -11,7 +11,6 @@ import {
 import Subheader from 'material-ui/Subheader'
 import { observer } from 'mobx-react'
 import categoryStore from 'stores/category'
-import articleStore from 'stores/article'
 
 import * as style from './style.scss'
 
@@ -28,7 +27,6 @@ export class CompCategory extends React.Component<{
     this.props.router.push({
       pathname: `/article/${key}`
     })
-    articleStore.getArticleList(key)
   }
 
   componentDidMount() {

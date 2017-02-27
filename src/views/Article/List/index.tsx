@@ -11,6 +11,9 @@ import * as style from './style.scss'
 @observer
 export class ViewArticleList extends React.Component<{ params?: any }, {}> {
 
+  componentWillReceiveProps(nextProps) {
+    articleStore.getArticleList(nextProps.params.category)
+  }
   componentDidMount() {
     articleStore.getArticleList(this.props.params.category)
   }
