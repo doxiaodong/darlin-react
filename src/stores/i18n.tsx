@@ -31,7 +31,7 @@ export class I18nStore {
         defaultNS: 'common',
         // debug: true,
         backend: {
-          loadPath: '/assets/locales/{{lng}}/{{ns}}.json'
+          loadPath: '/assets/i18n/{{lng}}/{{ns}}.json'
         }
       }, (err, t) => {
         this.t = t
