@@ -1,0 +1,35 @@
+@import '~normalize.css';
+@import './variables';
+
+* {
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+  padding: 0;
+}
+
+::selection {
+  background: lighten($active-color, 10%);
+  color: #fff;
+}
+
+.nowrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+a, .a {
+  text-decoration: none;
+  color: $color-gray;
+  fill: $color-gray;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+a:hover, a:focus, a:active, a.active, .a:hover, .a:focus, .a:active, .a.active {
+  color: $active-color;
+  fill: $active-color;
+}

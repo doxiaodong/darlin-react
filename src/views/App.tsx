@@ -1,12 +1,12 @@
 import * as React from 'react'
-import { CompNavbar } from 'components/Navbar'
+import { CompNavbarWithRouter } from 'components/Navbar'
 
 export class App extends React.Component<{}, {}> {
 
   render() {
     return (
       <div>
-        <CompNavbar />
+        <CompNavbarWithRouter />
         {this.props.children}
       </div>
     )

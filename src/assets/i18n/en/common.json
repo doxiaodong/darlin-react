@@ -1,4 +1,8 @@
 {
   "home": "Home",
-  "articles": "Articles"
+  "articles": "Articles",
+  "account": "Account",
+  "self": "At Will",
+  "login": "Login",
+  "logout": "Logout"
 }

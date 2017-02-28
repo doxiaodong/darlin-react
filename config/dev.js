@@ -14,7 +14,7 @@ const METADATA = {
   ENV: ENV
 }
 
-module.exports = webpackMerge(commonConfig(), {
+module.exports = webpackMerge(commonConfig({ env: ENV }), {
   devtool: 'eval',
   output: {
 

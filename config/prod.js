@@ -10,7 +10,7 @@ const JsonMinifyPlugin = require('./plugin/json-minify')
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production'
 
-module.exports = webpackMerge(commonConfig(), {
+module.exports = webpackMerge(commonConfig({ env: ENV }), {
   devtool: 'source-map',
   output: {
 

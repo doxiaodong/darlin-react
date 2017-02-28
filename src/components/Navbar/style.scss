@@ -1,0 +1,91 @@
+@import '~styles/variables';
+
+.header {
+  user-select: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9 * $z-index;
+  width: 100%;
+  height: $header-height;
+  background: linear-gradient(to top left, $header-bg, lighten($header-bg, 20%));
+}
+
+.nav {
+  height: 100%;
+  max-width: $max-width;
+  margin: auto;
+  position: relative;
+  padding-right: 200px;
+}
+
+.side {
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  line-height: 50px;
+  color: rgb(255, 255, 255);
+  right: 0;
+  text-align: right;
+  padding-right: 5px;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.current {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: $header-active;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  transition-property: transform;
+  transition: $base-duration;
+}
+
+@for $i from 0 through 3 {
+  .current[tabindex="#{$i}"] {
+    transform: translate3d($i*100%, 0, 0);
+  }
+}
+.current[tabindex="-1"] {
+  transform: translate3d(10*100%, 0, 0);
+}
+
+.list {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  > li {
+    float: left;
+    overflow: hidden;
+    width: 25%;
+    height: 100%;
+  }
+}
+
+.link {
+  float: left;
+  cursor: pointer;
+  color: darken(rgb(255, 255, 255), 10%);
+  width: 100%;
+  height: 100%;
+  line-height: $header-height;
+  text-align: center;
+  &.active {
+    color: darken(#fff, 10%);
+  }
+  &:hover {
+    color: $active-color;
+  }
+}
+
+.logout {
+  margin-left: 5px;
+}
