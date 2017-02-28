@@ -22,6 +22,20 @@ export class I18nStore {
     })
   }
 
+  /**
+   * Decorator to loadNamespaces when componentDidMount
+   * @param {string[]} name : namespace
+   */
+  namespace(name: string[]) {
+    return (target) => {
+      const componentDidMount = target.prototype.componentDidMount
+      target.prototype.componentDidMount = (...args) => {
+        this.loadNamespaces(name)
+        return componentDidMount.apply(target, args)
+      }
+    }
+  }
+
   @action init() {
     i18n.use(Fetch)
       .init({

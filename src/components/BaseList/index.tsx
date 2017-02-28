@@ -11,12 +11,9 @@ import i18nStore from 'stores/i18n'
 
 import * as style from './style.scss'
 
+@i18nStore.namespace(['article'])
 @observer
 export class CompBaseList extends React.Component<{ articles: any[] }, {}> {
-
-  componentDidMount() {
-    i18nStore.loadNamespaces(['article'])
-  }
 
   render() {
     const { articles } = this.props
