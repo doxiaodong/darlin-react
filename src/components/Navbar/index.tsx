@@ -14,11 +14,11 @@ import * as style from './style.scss'
 export class CompNavbar extends React.Component<{ router?: InjectedRouter }, {}> {
 
   componentDidMount() {
-    navStore.location = this.props.router['location']
+    navStore.setLocation(this.props.router['location'])
   }
 
   componentWillReceiveProps(nextProps) {
-    navStore.location = nextProps.router['location']
+    navStore.setLocation(this.props.router['location'])
   }
 
   render() {

@@ -1,41 +1,22 @@
-import * as injectTapEventPlugin from 'react-tap-event-plugin'
+import { AppContainer } from 'react-hot-loader'
 import * as React from 'react'
 import { render } from 'react-dom'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
-// import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
-import {
-  browserHistory,
-  Router,
-  Route
-} from 'react-router'
+import { useStrict } from 'mobx'
 import { App } from 'views/App'
-import { ViewHome } from 'views/Home'
-import { ViewArticleList } from 'views/Article/List'
 import i18nStore from 'stores/i18n'
-import 'styles/global.scss'
 
-injectTapEventPlugin()
 i18nStore.init()
+useStrict(true)
 
-const theme = getMuiTheme({
-  palette: {
-    primary1Color: '#009688',
-    primary2Color: '#009688',
-    primary3Color: '#009688'
-  }
-})
+const hotRender = (Component) =>
+  render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('app')
+  )
 
-render(
-  (
-    <MuiThemeProvider muiTheme={theme}>
-      <Router history={browserHistory}>
-        <Route path='' component={App}>
-          <Route path='/' component={ViewHome} />
-          <Route path='/article/:category' component={ViewArticleList} />
-        </Route>
-      </Router>
-    </MuiThemeProvider>
-  ),
-  document.getElementById('app')
-)
+hotRender(App)
+if (module.hot) {
+  module.hot.accept('./views/App', () => hotRender(App))
+}

@@ -1,11 +1,16 @@
 import {
   observable,
+  action,
   computed
 } from 'mobx'
 
 export class NavbarStore {
 
   @observable location
+
+  @action setLocation(value) {
+    this.location = value
+  }
   @computed get current(): number {
     if (!this.location) {
       return 0

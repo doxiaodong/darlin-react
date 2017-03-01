@@ -24,7 +24,7 @@ export class CompCategory extends React.Component<{
 }, {}> {
 
   handleRequestChange = (event, key) => {
-    categoryStore.handleRequestChange(event, key)
+    categoryStore.setKey(key)
     this.props.router.push({
       pathname: `/article/${key}`
     })
@@ -32,7 +32,7 @@ export class CompCategory extends React.Component<{
 
   componentDidMount() {
     categoryStore.getArticleCategories()
-    categoryStore.selectedCategoryKey = this.props.params.category
+    categoryStore.setKey(this.props.params.category)
   }
 
   render() {

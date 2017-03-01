@@ -38,17 +38,13 @@ export class ArticleStore {
     })
   }
 
-  @action resetArticles(category: string) {
+  @action getArticleList(category: string) {
     this.hasMore = false
     this.category = category
 
     this.totalArticles = []
     this.articles = []
     this.page = 1
-  }
-
-  getArticleList(category: string) {
-    this.resetArticles(category)
 
     return this.getMoreArticles()
   }

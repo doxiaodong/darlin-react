@@ -11,7 +11,7 @@ export class CategoryStore {
   @observable selectedCategoryKey: string
   @observable categories: any[] = []
 
-  @action handleRequestChange = (event, key) => {
+  @action setKey = (key) => {
     this.selectedCategoryKey = key
   }
 

@@ -16,6 +16,13 @@ const METADATA = {
 
 module.exports = webpackMerge(commonConfig({ env: ENV }), {
   devtool: 'eval',
+
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:4000',
+    'webpack/hot/only-dev-server',
+    './src/index.tsx'
+  ],
   output: {
 
     /** 
@@ -54,6 +61,7 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
   },
 
   devServer: {
+    hot: true,
     port: METADATA.port,
     host: METADATA.host,
     historyApiFallback: true,
