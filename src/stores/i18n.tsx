@@ -9,17 +9,17 @@ export class I18nStore {
   @observable t: i18n.TranslationFunction = i18n.t
   @observable lang: string
 
-  @action changeLanguage = (lang: string) => {
-    i18n.changeLanguage(lang, (err, t) => {
+  changeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang, action('after changeLanguage', (err, t) => {
       this.t = t
       this.lang = lang
-    })
+    }))
   }
 
-  @action loadNamespaces(namespace: string[]) {
-    i18n.loadNamespaces(namespace, () => {
+  loadNamespaces(namespace: string[]) {
+    i18n.loadNamespaces(namespace, action('after loadNamespaces', () => {
       this.t = i18n.t
-    })
+    }))
   }
 
   /**
@@ -36,7 +36,7 @@ export class I18nStore {
     }
   }
 
-  @action init() {
+  init() {
     i18n.use(Fetch)
       .init({
         fallbackLng: 'en',
@@ -47,10 +47,10 @@ export class I18nStore {
         backend: {
           loadPath: '/assets/i18n/{{lng}}/{{ns}}.json'
         }
-      }, (err, t) => {
+      }, action('after i18n init', (err, t) => {
         this.t = t
         this.lang = 'en'
-      })
+      }))
   }
 }
 

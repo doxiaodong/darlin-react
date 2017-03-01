@@ -1,6 +1,7 @@
 import {
   observable,
-  action
+  action,
+  runInAction
 } from 'mobx'
 import * as base64 from 'js-base64'
 import { getList } from 'api/article'
@@ -11,8 +12,9 @@ export class ArticleStore {
   page: number = 1
   category: string
 
-  @action getMoreArticles = () => {
-    return getList(this.category, this.page).then((data) => {
+  getMoreArticles = async () => {
+    const data = await getList(this.category, this.page)
+    return runInAction('update data aftergetMoreArticles', () => {
       if (data.next) {
         this.page++
         this.hasMore = true
@@ -20,7 +22,7 @@ export class ArticleStore {
         this.hasMore = false
       }
 
-      return data.results.map((a) =>
+      const articles = data.results.map((a) =>
         ({
           url: base64.Base64.encodeURI(a.url),
           title: a.title,
@@ -30,21 +32,23 @@ export class ArticleStore {
           isHot: a.hot
         })
       )
+      this.totalArticles = this.totalArticles.concat(articles)
+      // TODO: add article search
+      this.articles = this.totalArticles.filter(() => true)
     })
-      .then((articles) => {
-        this.totalArticles = this.totalArticles.concat(articles)
-        // TODO: add article search
-        this.articles = this.totalArticles.filter(() => true)
-      })
   }
 
-  @action getArticleList(category: string) {
+  @action resetArticles(category: string) {
     this.hasMore = false
     this.category = category
 
     this.totalArticles = []
     this.articles = []
     this.page = 1
+  }
+
+  getArticleList(category: string) {
+    this.resetArticles(category)
 
     return this.getMoreArticles()
   }
