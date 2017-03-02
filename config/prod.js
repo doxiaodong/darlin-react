@@ -3,9 +3,6 @@ const webpackMerge = require('webpack-merge') // Used to merge webpack configs
 const commonConfig = require('./common') // The settings that are common to prod and dev
 const helpers = require('./helpers')
 
-const WebpackMd5Hash = require('webpack-md5-hash')
-const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin')
-
 const JsonMinifyPlugin = require('./plugin/json-minify')
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production'
@@ -65,14 +62,6 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
     }),
 
     /** 
-     * Plugin: WebpackMd5Hash
-     * Description: Plugin to replace a standard webpack chunkhash with md5.
-     *
-     * See: https://www.npmjs.com/package/webpack-md5-hash
-     */
-    new WebpackMd5Hash(),
-
-    /** 
      * Plugin: UglifyJsPlugin
      * Description: Minimize all JavaScript output of chunks.
      * Loaders are switched into minimizing mode.
@@ -80,7 +69,7 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
      * See: https://webpack.js.org/plugins/uglifyjs-webpack-plugin/
      * NOTE: To debug prod builds uncomment //debug lines and comment //prod lines
      */
-    new UglifyJsPlugin({
+    new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       beautify: false, //prod
       output: {
