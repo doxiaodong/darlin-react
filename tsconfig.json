@@ -22,7 +22,8 @@
       "i18next",
       "react-tap-event-plugin",
       "material-ui",
-      "crypto-js"
+      "crypto-js",
+      "jest"
     ]
   },
   "exclude": [
