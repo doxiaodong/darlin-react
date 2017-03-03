@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export class CompTitle extends React.Component<{ title: string }, {}> {
+export class Title extends React.Component<{ title: string }, {}> {
 
   updateTitle(props) {
     const nextTitle = props.title || ''

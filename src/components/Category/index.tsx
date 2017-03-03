@@ -18,7 +18,7 @@ import * as style from './style.scss'
 const SelectableList = makeSelectable(List)
 
 @observer
-export class CompCategory extends React.Component<{
+export class Category extends React.Component<{
   params?: any,
   router?: InjectedRouter
 }, {}> {
@@ -64,4 +64,4 @@ export class CompCategory extends React.Component<{
   }
 }
 
-export const CompCategoryWithRouter = withRouter(CompCategory)
+export const CategoryWithRouter = withRouter(Category)

@@ -11,7 +11,7 @@ import navStore from 'stores/navbar'
 import * as style from './style.scss'
 
 @observer
-export class CompNavbar extends React.Component<{ router?: InjectedRouter }, {}> {
+export class Navbar extends React.Component<{ router?: InjectedRouter }, {}> {
 
   componentDidMount() {
     navStore.setLocation(this.props.router['location'])
@@ -52,7 +52,7 @@ export class CompNavbar extends React.Component<{ router?: InjectedRouter }, {}>
   }
 }
 
-export const CompNavbarWithRouter = withRouter(CompNavbar)
+export const NavbarWithRouter = withRouter(Navbar)
 
 function Slide(props) {
   const { isLoggedIn } = props
