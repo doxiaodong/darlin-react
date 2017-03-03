@@ -34,7 +34,6 @@ export class FooterStore {
     i18nStore.changeLanguage(key)
   }
 
-
 }
 
 export default new FooterStore()
