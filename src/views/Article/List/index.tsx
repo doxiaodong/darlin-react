@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { observer } from 'mobx-react'
-import RaisedButton from 'material-ui/RaisedButton'
 import { CompPage } from 'components/Page'
 import { CompBaseList } from 'components/BaseList'
 import { CompCategoryWithRouter } from 'components/Category'
@@ -21,9 +20,6 @@ export class ViewArticleList extends React.Component<{ params?: any }, {}> {
 
   render() {
     const { t } = i18nStore
-    const moreButton = (
-      <RaisedButton label={t('article:loadMore')} primary={true} onClick={articleStore.getMoreArticles} />
-    )
     return (
       <CompPage title={t('common:articles')}>
         <div className={style.container}>
@@ -32,7 +28,6 @@ export class ViewArticleList extends React.Component<{ params?: any }, {}> {
           </div>
           <div className={style.left}>
             <CompBaseList articles={articleStore.articles} />
-            {articleStore.hasMore && moreButton}
           </div>
         </div>
       </CompPage>

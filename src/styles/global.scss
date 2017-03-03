@@ -33,3 +33,15 @@ a:hover, a:focus, a:active, a.active, .a:hover, .a:focus, .a:active, .a.active {
   color: $active-color;
   fill: $active-color;
 }
+
+.each-block {
+  opacity: $main-opacity;
+  background-color: $bg-page;
+  border-radius: 3px;
+  .header {
+    .big-size {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+}

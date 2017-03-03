@@ -8,7 +8,7 @@ import {
   ListItem,
   makeSelectable
 } from 'material-ui/List'
-import Subheader from 'material-ui/Subheader'
+import { Subheader } from 'components/Subheader'
 import { observer } from 'mobx-react'
 import categoryStore from 'stores/category'
 import i18nStore from 'stores/i18n'
@@ -48,12 +48,13 @@ export class CompCategory extends React.Component<{
     })
     return (
       <div className={style.container}>
-        <div className={style.right}>
+        <div className={style.right + ' each-block'}>
+          <Subheader title={t('article:category')} />
           <SelectableList
+            style={{ paddingTop: 0 }}
             value={categoryStore.selectedCategoryKey}
             onChange={this.handleRequestChange}
           >
-            <Subheader>{t('article:category')}</Subheader>
             {listItem}
           </SelectableList>
         </div>
