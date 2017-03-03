@@ -4,15 +4,21 @@ import {
 } from 'mobx'
 import * as i18n from 'i18next'
 import Fetch from 'i18next-fetch-backend'
+import { LocalStorage } from 'base/local-storage'
 
 export class I18nStore {
   @observable t: i18n.TranslationFunction = i18n.t
   @observable lang: string
 
+  constructor() {
+    this.lang = LocalStorage.get('react-lang') || 'en'
+  }
+
   changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang, action('after changeLanguage', (err, t) => {
       this.t = t
       this.lang = lang
+      LocalStorage.save('react-lang', lang)
     }))
   }
 
@@ -39,8 +45,8 @@ export class I18nStore {
   init() {
     i18n.use(Fetch)
       .init({
-        fallbackLng: 'en',
-        preload: ['en'],
+        fallbackLng: this.lang,
+        preload: [this.lang],
         ns: ['common'],
         defaultNS: 'common',
         // debug: true,
@@ -49,7 +55,6 @@ export class I18nStore {
         }
       }, action('after i18n init', (err, t) => {
         this.t = t
-        this.lang = 'en'
       }))
   }
 }

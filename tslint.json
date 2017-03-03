@@ -4,6 +4,7 @@
     "node_modules/tslint-microsoft-contrib"
   ],
   "rules": {
+    "jsx-no-lambda": false,
     "semicolon": [true, "never"],
     "quotemark": [
       true,

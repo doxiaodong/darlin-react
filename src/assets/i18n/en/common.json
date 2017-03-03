@@ -4,5 +4,6 @@
   "account": "Account",
   "self": "At Will",
   "login": "Login",
-  "logout": "Logout"
+  "logout": "Logout",
+  "langSetting": "语言设置"
 }
