@@ -1,5 +1,5 @@
 import { RouteConfig } from 'react-router'
-import { Common } from './common'
+import { Common } from './Common'
 import { ViewHome } from './Home'
 
 export const rootRoute: RouteConfig = {
