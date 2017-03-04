@@ -4,15 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run server:hmr",
-    "start:proxy-prod": "npm run server:hmr:proxy-prod",
+    "start": "npm run server",
+    "start:proxy-prod": "npm run server:proxy-prod",
     "tslint": "tslint",
     "test": "jest --coverage",
     "lint": "npm run tslint \"src/**/*.tsx\"",
     "server": "webpack-dev-server --config config/dev.js --progress --profile --watch --content-base src/",
     "server:proxy-prod": "webpack-dev-server --config config/dev.js --progress --profile --watch --content-base src/",
-    "server:hmr": "npm run server -- --inline --hot",
-    "server:hmr:proxy-prod": "npm run server:proxy-prod -- --inline --hot",
     "prebuild:prod": "rm -rf dist",
     "build:prod": "webpack --config config/prod.js --progress --profile --bail"
   },

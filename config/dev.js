@@ -60,6 +60,12 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
 
   },
 
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
+  ],
+
   devServer: {
     hot: true,
     port: METADATA.port,

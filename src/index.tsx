@@ -2,7 +2,7 @@ import { AppContainer } from 'react-hot-loader'
 import * as React from 'react'
 import { render } from 'react-dom'
 import { useStrict } from 'mobx'
-import { App } from 'views/App'
+import App from 'views/App'
 import i18nStore from 'stores/i18n'
 
 i18nStore.init()

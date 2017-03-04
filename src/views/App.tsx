@@ -5,12 +5,13 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 // import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import {
   browserHistory,
-  Router,
-  Route
+  Router
 } from 'react-router'
-import { Common } from './Common'
-import { ViewHome } from 'views/Home'
-import { ViewArticleList } from 'views/Article/List'
+// import { Common } from './Common'
+// import { ViewHome } from 'views/Home'
+// import { ViewArticleList } from 'views/Article/List'
+import { rootRoute } from './route'
+
 import 'styles/global.scss'
 
 injectTapEventPlugin()
@@ -23,18 +24,15 @@ const theme = getMuiTheme({
   }
 })
 
-export class App extends React.Component<{}, {}> {
+class App extends React.Component<{}, {}> {
 
   render() {
     return (
       <MuiThemeProvider muiTheme={theme}>
-        <Router history={browserHistory}>
-          <Route path='' component={Common}>
-            <Route path='/' component={ViewHome} />
-            <Route path='/article/:category' component={ViewArticleList} />
-          </Route>
-        </Router>
+        <Router history={browserHistory} routes={rootRoute} />
       </MuiThemeProvider>
     )
   }
 }
+
+export default App
