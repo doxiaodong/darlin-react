@@ -1,4 +1,5 @@
 import { AppContainer } from 'react-hot-loader'
+import * as injectTapEventPlugin from 'react-tap-event-plugin'
 import * as React from 'react'
 import { render } from 'react-dom'
 import { useStrict } from 'mobx'
@@ -7,6 +8,7 @@ import i18nStore from 'stores/i18n'
 
 i18nStore.init()
 useStrict(true)
+injectTapEventPlugin()
 
 const hotRender = (Component) =>
   render(
@@ -17,6 +19,6 @@ const hotRender = (Component) =>
   )
 
 hotRender(App)
-if (module.hot) {
-  module.hot.accept('./views/App', () => hotRender(App))
+if (module['hot']) {
+  module['hot'].accept('views/App', () => hotRender(App))
 }

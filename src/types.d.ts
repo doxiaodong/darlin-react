@@ -1,2 +1,1 @@
-declare const module
-declare const require
+declare const ENV: 'production' | 'development'

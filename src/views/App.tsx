@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as injectTapEventPlugin from 'react-tap-event-plugin'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 // import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
@@ -7,14 +6,9 @@ import {
   browserHistory,
   Router
 } from 'react-router'
-// import { Common } from './Common'
-// import { ViewHome } from 'views/Home'
-// import { ViewArticleList } from 'views/Article/List'
 import { rootRoute } from './route'
 
 import 'styles/global.scss'
-
-injectTapEventPlugin()
 
 const theme = getMuiTheme({
   palette: {

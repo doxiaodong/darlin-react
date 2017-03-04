@@ -15,7 +15,9 @@ function postCssPlugins() {
 }
 
 module.exports = function(option) {
-  const isProd = option.env === 'production'
+  const env = option.env
+  const isProd = env === 'production'
+  const isDev = env === 'development'
   return {
     entry: {
       'main': './src/index.tsx'
@@ -35,7 +37,10 @@ module.exports = function(option) {
       rules: [
         {
           test: /\.tsx?$/,
-          use: 'ts-loader'
+          use: isDev ? [
+            'react-hot-loader/webpack',
+            'ts-loader'
+          ] : 'ts-loader'
         },
         {
           test: /\.scss$/,
@@ -94,7 +99,20 @@ module.exports = function(option) {
       new ExtractTextPlugin(helpers.static + 'main.[hash].css'),
 
       new webpack.optimize.CommonsChunkPlugin({
-        name: ['main']
+        name: 'lib',
+        chunks: ['main'],
+        minChunks: module => /node_modules/.test(module.resource)
+      }),
+
+      new webpack.optimize.CommonsChunkPlugin({
+        name: ['lib']
+      }),
+
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify(env)
+        },
+        ENV: JSON.stringify(env)
       }),
 
       new CopyWebpackPlugin(
@@ -114,7 +132,10 @@ module.exports = function(option) {
           removeComments: true
         },
         chunksSortMode: 'dependency'
-      })
+      }),
+
+      // moment 语言包只加载 zh-cn
+      new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/)
     ],
 
     node: {

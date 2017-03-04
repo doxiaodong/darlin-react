@@ -23,7 +23,8 @@
       "react-tap-event-plugin",
       "material-ui",
       "crypto-js",
-      "jest"
+      "jest",
+      "node"
     ]
   },
   "exclude": [

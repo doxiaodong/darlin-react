@@ -10,4 +10,4 @@ export function paramPostBody(obj): string {
   return str.join('&')
 }
 
-export const apiPrefix = '/api'
+export const apiPrefix = ENV === 'production' ? 'https://api.darlin.me' : '/api'
