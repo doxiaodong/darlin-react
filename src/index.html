@@ -15,5 +15,16 @@
 </head>
 <body>
   <div class="h100" id="app"></div>
+
+  <script src="https://cdn.tristana.cc/ajax/libs/device.js/0.2.7/device.min.js"></script>
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('/sw.js').then(function(registration) {
+        console.log('service worker install success')
+      }).catch(function (err) {
+        console.error('servcie worker install error')
+      })
+    }
+	</script>
 </body>
 </html>
