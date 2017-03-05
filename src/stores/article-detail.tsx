@@ -1,6 +1,6 @@
 import {
   observable,
-  // action,
+  action,
   runInAction
 } from 'mobx'
 import * as base64 from 'js-base64'
@@ -22,6 +22,12 @@ export class ArticleDetailStore {
       this.subtitle = `• ${transformDate(data.create_time)} • ${data.category.name}`
       this.content = data.content
     })
+  }
+
+  @action clear() {
+    this.title = ''
+    this.subtitle = ''
+    this.content = ''
   }
 
 }

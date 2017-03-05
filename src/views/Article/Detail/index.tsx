@@ -26,6 +26,10 @@ export class ViewArticleDetail extends React.Component<{ params?: any }, {}> {
     articleDetailStore.getArticleDetail(this.props.params.url)
   }
 
+  componentWillUnmount() {
+    articleDetailStore.clear()
+  }
+
   render() {
     const { t } = i18nStore
     const { title, subtitle, content } = articleDetailStore
