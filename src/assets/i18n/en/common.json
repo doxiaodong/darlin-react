@@ -5,5 +5,7 @@
   "self": "At Will",
   "login": "Login",
   "logout": "Logout",
-  "langSetting": "语言设置"
+  "langSetting": "语言设置",
+  "visibilityTitle": "Click me !!",
+  "titleSuffix": " -- darlin.me"
 }
