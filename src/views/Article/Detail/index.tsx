@@ -2,10 +2,12 @@ import * as React from 'react'
 import { observer } from 'mobx-react'
 import {
   Card,
-  CardHeader
+  CardHeader,
+  CardText
 } from 'material-ui/Card'
 import { Page } from 'components/Page'
 import { CategoryWithRouter } from 'components/Category'
+import { Marked } from 'components/Marked'
 import i18nStore from 'stores/i18n'
 import articleDetailStore from 'stores/article-detail'
 
@@ -26,7 +28,7 @@ export class ViewArticleDetail extends React.Component<{ params?: any }, {}> {
 
   render() {
     const { t } = i18nStore
-    const { title, subtitle } = articleDetailStore
+    const { title, subtitle, content } = articleDetailStore
     const articleTitle = title || t('article:articleDetail')
     return (
       <Page title={articleTitle}>
@@ -42,9 +44,9 @@ export class ViewArticleDetail extends React.Component<{ params?: any }, {}> {
                 titleStyle={titleStyle}
                 subtitle={subtitle}
               />
-              <div>
-                TODO: detail
-              </div>
+              <CardText>
+                <Marked md={content} />
+              </CardText>
             </Card>
           </div>
         </div>

@@ -24,7 +24,11 @@
       "material-ui",
       "crypto-js",
       "jest",
-      "node"
+      "node",
+      "emojione",
+      "highlight.js",
+      "marked",
+      "mathjax"
     ]
   },
   "exclude": [
