@@ -12,7 +12,10 @@ import * as style from './style.scss'
 export class ViewArticleList extends React.Component<{ params?: any }, {}> {
 
   componentWillReceiveProps(nextProps) {
-    articleStore.getArticleList(nextProps.params.category)
+    const nextCategory = nextProps.params.category
+    if (nextCategory !== this.props.params.category) {
+      articleStore.getArticleList(nextCategory)
+    }
   }
   componentDidMount() {
     articleStore.getArticleList(this.props.params.category)
