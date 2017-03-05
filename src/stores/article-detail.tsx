@@ -21,7 +21,6 @@ export class ArticleDetailStore {
     })
   }
 
-
 }
 
 export default new ArticleDetailStore()
