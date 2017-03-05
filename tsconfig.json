@@ -25,7 +25,6 @@
       "crypto-js",
       "jest",
       "node",
-      "emojione",
       "highlight.js",
       "marked",
       "mathjax"
