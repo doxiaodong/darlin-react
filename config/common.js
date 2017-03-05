@@ -119,7 +119,7 @@ module.exports = function(option) {
         [
           { from: 'src/assets', to: 'assets' },
           { from: 'src/favicon.ico', to: 'favicon.ico' },
-          // { from: 'src/sw.js', to: 'sw.js' },
+          { from: 'src/sw.js', to: 'sw.js' },
         ],
         { ignore: ['.DS_Store', 'i18n/**/*'] }
       ),
