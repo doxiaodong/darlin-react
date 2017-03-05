@@ -30,6 +30,17 @@
   padding-right: 5px;
 }
 
+@media screen and (max-width: 500px) {
+  .nav {
+    padding-right: 0;
+  }
+
+  .side {
+    visibility: hidden;
+    width: 0;
+  }
+}
+
 .container {
   position: relative;
   height: 100%;
