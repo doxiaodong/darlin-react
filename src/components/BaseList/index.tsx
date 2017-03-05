@@ -1,16 +1,24 @@
 import * as React from 'react'
-// import { Link } from 'react-router'
+import { Link } from 'react-router'
 import { observer } from 'mobx-react'
 import {
   List,
   ListItem
 } from 'material-ui/List'
+import {
+  Card,
+  CardHeader
+} from 'material-ui/Card'
 import RaisedButton from 'material-ui/RaisedButton'
-import { Subheader } from 'components/Subheader'
 import { Divider } from 'components/Divider'
 import { transformDate } from 'base/transform/date'
 import articleStore from 'stores/article'
 import i18nStore from 'stores/i18n'
+
+import {
+  headerStyle,
+  titleStyle
+} from 'styles/react/card/header'
 
 import * as style from './style.scss'
 
@@ -25,12 +33,14 @@ export class BaseList extends React.Component<{ articles: any[] }, {}> {
       (
         <div key={article.url}>
           {index > 0 && <Divider />}
-          <ListItem>
-            <div className={style.article}>
-              <div className={style.title}>{article.title}</div>
-              <div>{transformDate(article.createTime)}</div>
-            </div>
-          </ListItem>
+          <Link to={`/article/${article.category}/${article.url}`}>
+            <ListItem>
+              <div className={style.article}>
+                <div className={style.title}>{article.title}</div>
+                <div>{transformDate(article.createTime)}</div>
+              </div>
+            </ListItem>
+          </Link>
         </div>
       )
     )
@@ -44,15 +54,19 @@ export class BaseList extends React.Component<{ articles: any[] }, {}> {
       </div>
     )
     return (
-      <div className='each-block'>
-        <Subheader title={t('article:articleList')} />
+      <Card className='each-block'>
+        <CardHeader
+          title={t('article:articleList')}
+          style={headerStyle}
+          titleStyle={titleStyle}
+        />
         <List style={{ paddingTop: 0 }}>
           {listItem}
           {(articleStore.hasMore || articles.length === 0) && <Divider />}
           {articles.length === 0 && <ListItem>{t('article:noArticle')}</ListItem>}
           {articleStore.hasMore && moreButton}
         </List>
-      </div>
+      </Card>
     )
   }
 }

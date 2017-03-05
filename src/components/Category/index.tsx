@@ -8,10 +8,18 @@ import {
   ListItem,
   makeSelectable
 } from 'material-ui/List'
-import { Subheader } from 'components/Subheader'
+import {
+  Card,
+  CardHeader
+} from 'material-ui/Card'
 import { observer } from 'mobx-react'
 import categoryStore from 'stores/category'
 import i18nStore from 'stores/i18n'
+
+import {
+  headerStyle,
+  titleStyle
+} from 'styles/react/card/header'
 
 import * as style from './style.scss'
 
@@ -48,8 +56,12 @@ export class Category extends React.Component<{
     })
     return (
       <div className={style.container}>
-        <div className={style.right + ' each-block'}>
-          <Subheader title={t('article:category')} />
+        <Card className={style.right + ' each-block'}>
+          <CardHeader
+            title={t('article:category')}
+            style={headerStyle}
+            titleStyle={titleStyle}
+          />
           <SelectableList
             style={{ paddingTop: 0 }}
             value={categoryStore.selectedCategoryKey}
@@ -57,7 +69,7 @@ export class Category extends React.Component<{
           >
             {listItem}
           </SelectableList>
-        </div>
+        </Card>
         <div className={style.left} />
       </div>
     )
