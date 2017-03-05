@@ -11,7 +11,7 @@
     "lint": "npm run tslint \"src/**/*.tsx\"",
     "server": "webpack-dev-server --config config/dev.js --progress --profile --watch --content-base src/",
     "server:proxy-prod": "webpack-dev-server --config config/dev.js --progress --profile --watch --content-base src/",
-    "prebuild:prod": "rm -rf dist",
+    "prebuild:prod": "rm -rf dist && npm run lint && npm test",
     "build:prod": "webpack --config config/prod.js --progress --profile --bail"
   },
   "repository": {
