@@ -7,6 +7,8 @@ const cacheKeys = [
   /cdn\.jsdelivr\.net/
 ]
 
+let timeoutJsonpIds = []
+
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys()
@@ -25,7 +27,8 @@ self.addEventListener('activate', function(event) {
 
 self.addEventListener('fetch', function(event) {
   const request = event.request
-  const isCache = cacheKeys.some(k => k.test(request.url))
+  const url = request.url
+  const isCache = cacheKeys.some(k => k.test(url))
   if (isCache) {
     event.respondWith(
       caches.match(request).then((response) => {
@@ -44,6 +47,29 @@ self.addEventListener('fetch', function(event) {
         })
       })
     )
+    return
   }
 
+  event.respondWith(
+    fetch(request.clone()).then((fetchResponse) => {
+      if (timeoutJsonpIds.some((id) => url.indexOf(id) !== -1)) {
+        timeoutJsonpIds = timeoutJsonpIds.filter((id) => url.indexOf(id) !== -1)
+        // return empty response
+        return new Response()
+      }
+      return fetchResponse
+    }).catch(() => {
+      timeoutJsonpIds = timeoutJsonpIds.filter((id) => url.indexOf(id) !== -1)
+    })
+  )
+
+})
+
+self.addEventListener('message', (event) => {
+  // it better to abort fetch
+  // see https://github.com/whatwg/fetch/issues/447
+  const data = event.data
+  if (data.from === 'fetch-jsonp') {
+    timeoutJsonpIds.push(event.data.callbackFunction)
+  }
 })

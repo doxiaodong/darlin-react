@@ -1,4 +1,5 @@
 export * from './fetch'
+export * from './jsonp'
 
 export function paramPostBody(obj): string {
   const str: string[] = []
