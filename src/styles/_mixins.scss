@@ -28,6 +28,7 @@
   & > .left {
     display: block;
     box-sizing: border-box;
+    overflow: hidden;
     margin-right: $right + 10px;
   }
 }

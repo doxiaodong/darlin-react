@@ -9,6 +9,8 @@ import { Page } from 'components/Page'
 import { CategoryWithRouter } from 'components/Category'
 import { Marked } from 'components/Marked'
 import i18nStore from 'stores/i18n'
+
+import { Comment } from './Comment'
 import store from './store'
 
 import {
@@ -52,6 +54,8 @@ export class ViewArticleDetail extends React.Component<{ params?: any }, {}> {
                 <Marked md={content} />
               </CardText>
             </Card>
+
+            <Comment />
           </div>
         </div>
       </Page>

@@ -1,0 +1,49 @@
+@import '~styles/mixins';
+@import '~styles/variables';
+
+//
+.active {
+  color: $active-color;
+}
+
+// comment list
+.reply {
+  padding: 10px 0;
+  @include left-right(50px);
+  & + .reply {
+    border-top: 1px solid #ccc;
+  }
+  &:first-child {
+    padding-top: 0;
+  }
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.subreply {
+  margin-top: 10px;
+  padding-left: 60px;
+  .reply {
+    border-top: 1px solid #ccc;
+    &:first-child {
+      padding-top: 10px;
+    }
+  }
+}
+
+.pic {
+  height: 50px;
+}
+
+.word {
+  min-height: 50px;
+}
+
+.message {
+  text-align: right;
+  color: $color-gray;
+  > span + span {
+    margin-left: 5px;
+  }
+}

@@ -8,6 +8,9 @@ import './night.global.scss'
 import './number.global.scss'
 
 const ms = markedService.init()
+// for emojione class name
+const whiteList = xss.whiteList
+whiteList.img.push('class')
 
 export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> {
 
@@ -56,7 +59,7 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
     const emojiMd = this.updateEmojione(md)
     let html = ms(emojiMd)
     if (safe) {
-      html = xss(html)
+      html = xss(html, { whiteList })
     }
     return <div ref={this.ref} className='markdown' dangerouslySetInnerHTML={{ __html: html }} />
   }

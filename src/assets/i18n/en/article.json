@@ -3,5 +3,8 @@
   "noArticle": "No Articles",
   "loadMore": "Load More",
   "category": "Category",
-  "articleDetail": "Article Detail"
+  "articleDetail": "Article Detail",
+  "replies": "replies",
+  "reply": "reply",
+  "floor": "floor"
 }

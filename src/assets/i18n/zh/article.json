@@ -3,5 +3,8 @@
   "noArticle": "暂无文章",
   "loadMore": "加载更多",
   "category": "分类",
-  "articleDetail": "文章详情"
+  "articleDetail": "文章详情",
+  "replies": "回复",
+  "reply": "回复",
+  "floor": "楼"
 }
