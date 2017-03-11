@@ -45,6 +45,4 @@ export class CategoryStore {
 
 }
 
-const categoryStore = new CategoryStore()
-
-export default categoryStore
+export default new CategoryStore()

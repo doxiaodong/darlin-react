@@ -13,8 +13,8 @@ import {
   CardHeader
 } from 'material-ui/Card'
 import { observer } from 'mobx-react'
-import categoryStore from 'stores/category'
 import i18nStore from 'stores/i18n'
+import store from './store'
 
 import {
   headerStyle,
@@ -32,23 +32,23 @@ export class Category extends React.Component<{
 }, {}> {
 
   handleRequestChange = (event, key) => {
-    categoryStore.setKey(key)
+    store.setKey(key)
     this.props.router.push({
       pathname: `/article/${key}`
     })
   }
 
   componentDidMount() {
-    categoryStore.getArticleCategories()
-    categoryStore.setKey(this.props.params.category)
+    store.getArticleCategories()
+    store.setKey(this.props.params.category)
   }
 
   render() {
     const { t } = i18nStore
-    const listItem = categoryStore.categories.map((category) => {
+    const listItem = store.categories.map((category) => {
       return (
         <ListItem key={category.key} value={category.key}>
-          <div className={category.key === categoryStore.selectedCategoryKey ? style.active : ''}>
+          <div className={category.key === store.selectedCategoryKey ? style.active : ''}>
             {category.name}
           </div>
         </ListItem>
@@ -64,7 +64,7 @@ export class Category extends React.Component<{
           />
           <SelectableList
             style={{ paddingTop: 0 }}
-            value={categoryStore.selectedCategoryKey}
+            value={store.selectedCategoryKey}
             onChange={this.handleRequestChange}
           >
             {listItem}

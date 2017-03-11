@@ -9,7 +9,7 @@ import { Page } from 'components/Page'
 import { CategoryWithRouter } from 'components/Category'
 import { Marked } from 'components/Marked'
 import i18nStore from 'stores/i18n'
-import articleDetailStore from 'stores/article-detail'
+import store from './store'
 
 import {
   headerStyle,
@@ -23,16 +23,16 @@ import * as styleList from '../List/style.scss'
 export class ViewArticleDetail extends React.Component<{ params?: any }, {}> {
 
   componentWillMount() {
-    articleDetailStore.getArticleDetail(this.props.params.url)
+    store.getArticleDetail(this.props.params.url)
   }
 
   componentWillUnmount() {
-    articleDetailStore.clear()
+    store.clear()
   }
 
   render() {
     const { t } = i18nStore
-    const { title, subtitle, content } = articleDetailStore
+    const { title, subtitle, content } = store
     const articleTitle = title || t('article:articleDetail')
     return (
       <Page title={articleTitle}>

@@ -6,7 +6,7 @@ import {
 } from 'react-router'
 import { observer } from 'mobx-react'
 import i18nStore from 'stores/i18n'
-import navStore from 'stores/navbar'
+import store from './store'
 
 import * as style from './style.scss'
 
@@ -14,11 +14,11 @@ import * as style from './style.scss'
 export class Navbar extends React.Component<{ router?: InjectedRouter }, {}> {
 
   componentDidMount() {
-    navStore.setLocation(this.props.router['location'])
+    store.setLocation(this.props.router['location'])
   }
 
   componentWillReceiveProps(nextProps) {
-    navStore.setLocation(this.props.router['location'])
+    store.setLocation(this.props.router['location'])
   }
 
   render() {
@@ -28,7 +28,7 @@ export class Navbar extends React.Component<{ router?: InjectedRouter }, {}> {
         <nav className={style.nav}>
           <Slide isLoggedIn={false} />
           <div className={style.container}>
-            <div className={style.current} tabIndex={navStore.current} />
+            <div className={style.current} tabIndex={store.current} />
             <ul className={style.list}>
               <li>
                 <Link to='/' className={style.link}>{t('common:home')}</Link>
