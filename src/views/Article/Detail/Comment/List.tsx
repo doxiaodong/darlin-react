@@ -8,6 +8,7 @@ import * as base64 from 'js-base64'
 import IconButton from 'material-ui/IconButton'
 import ContentReply from 'material-ui/svg-icons/content/reply'
 import { Marked } from 'components/Marked'
+import { Loading } from 'components/Loading'
 import { transformDate } from 'base/transform/date'
 import { iconStyle } from 'styles/react/icon'
 import i18nStore from 'stores/i18n'
@@ -24,6 +25,7 @@ export class CommentList extends React.Component<{ params?: InjectedRouter }, {}
 
   render() {
     const { t } = i18nStore
+    const { loadings } = store
 
     const listItem = store.comments.map((comment) => {
       return (
@@ -52,7 +54,8 @@ export class CommentList extends React.Component<{ params?: InjectedRouter }, {}
     })
 
     return <ul>
-      {listItem}
+      {!loadings.comments && listItem}
+      {loadings.comments && <Loading />}
     </ul>
   }
 }

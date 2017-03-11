@@ -1,5 +1,6 @@
 import {
   observable,
+  computed,
   action,
   runInAction
 } from 'mobx'
@@ -9,11 +10,17 @@ import {
   getHeadSubComments
 } from 'api/comment'
 import { getPictureURL } from 'base/utils'
+import { Loadings } from 'stores/loadings'
+
+const loadings = new Loadings()
 
 export class CommentStore {
 
   @observable articleReplies: number = 0
   @observable comments = []
+  @computed get loadings() {
+    return loadings.state
+  }
 
   async getSubComments(head: string): Promise<any[]> {
     const data = await getHeadSubComments(head)
@@ -36,6 +43,7 @@ export class CommentStore {
     })
   }
 
+  @loadings.handle('comments')
   @action async getComments(url) {
     this.articleReplies = 0
     const data = await getCommentList(url)

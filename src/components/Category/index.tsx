@@ -13,6 +13,7 @@ import {
   CardHeader
 } from 'material-ui/Card'
 import { observer } from 'mobx-react'
+import { Loading } from 'components/Loading'
 import i18nStore from 'stores/i18n'
 import store from './store'
 
@@ -45,6 +46,7 @@ export class Category extends React.Component<{
 
   render() {
     const { t } = i18nStore
+    const { loadings } = store
     const listItem = store.categories.map((category) => {
       return (
         <ListItem key={category.key} value={category.key}>
@@ -67,7 +69,8 @@ export class Category extends React.Component<{
             value={store.selectedCategoryKey}
             onChange={this.handleRequestChange}
           >
-            {listItem}
+            {!loadings.category && listItem}
+            {loadings.category && <Loading />}
           </SelectableList>
         </Card>
         <div className={style.left} />

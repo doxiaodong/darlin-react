@@ -1,10 +1,14 @@
 import {
   observable,
   action,
+  computed,
   runInAction
 } from 'mobx'
 import { getCategories } from 'api/article'
 import { LocalStorage } from 'base/local-storage'
+import { Loadings } from 'stores/loadings'
+
+const loadings = new Loadings()
 
 export class CategoryStore {
 
@@ -15,6 +19,11 @@ export class CategoryStore {
     this.selectedCategoryKey = key
   }
 
+  @computed get loadings() {
+    return loadings.state
+  }
+
+  @loadings.handle('category')
   async getArticleCategories() {
     async function getCategoriesAsync() {
       let categories: any[] = JSON.parse(LocalStorage.getSession('article.categories'))
@@ -38,7 +47,7 @@ export class CategoryStore {
     }
 
     const categories = await getCategoriesAsync()
-    runInAction('getCategories', () => {
+    return runInAction('getCategories', () => {
       return this.categories = categories
     })
   }

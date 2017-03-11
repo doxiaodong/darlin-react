@@ -8,6 +8,7 @@ import {
 import { Page } from 'components/Page'
 import { CategoryWithRouter } from 'components/Category'
 import { Marked } from 'components/Marked'
+import { Loading } from 'components/Loading'
 import i18nStore from 'stores/i18n'
 
 import { Comment } from './Comment'
@@ -34,7 +35,7 @@ export class ViewArticleDetail extends React.Component<{ params?: any }, {}> {
 
   render() {
     const { t } = i18nStore
-    const { title, subtitle, content } = store
+    const { title, subtitle, content, loadings } = store
     const articleTitle = title || t('article:articleDetail')
     return (
       <Page title={articleTitle}>
@@ -51,7 +52,8 @@ export class ViewArticleDetail extends React.Component<{ params?: any }, {}> {
                 subtitle={subtitle}
               />
               <CardText>
-                <Marked md={content} />
+                {!loadings.articleDetail && <Marked md={content} />}
+                {loadings.articleDetail && <Loading />}
               </CardText>
             </Card>
 

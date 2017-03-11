@@ -17,18 +17,18 @@ export class Comment extends React.Component<{}, {}> {
 
   render() {
     const { t } = i18nStore
+    const { articleReplies } = store
     return (
       <Card className='each-block'>
         <CardHeader
           style={headerStyle}
         >
           <div style={{ float: 'left' }}>
-            <span className={style.active}>{store.articleReplies}&nbsp;</span>{t('article:replies')}
+            <span className={style.active}>{articleReplies}&nbsp;</span>{t('article:replies')}
           </div>
         </CardHeader>
         <CardText>
           <CommentListWithRouter />
-
         </CardText>
       </Card>
     )

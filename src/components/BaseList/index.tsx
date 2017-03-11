@@ -11,6 +11,7 @@ import {
 } from 'material-ui/Card'
 import RaisedButton from 'material-ui/RaisedButton'
 import { Divider } from 'components/Divider'
+import { Loading } from 'components/Loading'
 import { transformDate } from 'base/transform/date'
 import articleStore from 'stores/article'
 import i18nStore from 'stores/i18n'
@@ -29,6 +30,7 @@ export class BaseList extends React.Component<{ articles: any[] }, {}> {
   render() {
     const { articles } = this.props
     const { t } = i18nStore
+    const { loadings } = articleStore
     const listItem = articles.map((article, index) =>
       (
         <div key={article.url}>
@@ -62,9 +64,11 @@ export class BaseList extends React.Component<{ articles: any[] }, {}> {
         />
         <List style={{ paddingTop: 0 }}>
           {listItem}
-          {(articleStore.hasMore || articles.length === 0) && <Divider />}
-          {articles.length === 0 && <ListItem>{t('article:noArticle')}</ListItem>}
-          {articleStore.hasMore && moreButton}
+
+          {loadings.articles && <Loading />}
+          {(articleStore.hasMore || articles.length === 0) && !loadings.articles && <Divider />}
+          {articles.length === 0 && !loadings.articles && <ListItem>{t('article:noArticle')}</ListItem>}
+          {articleStore.hasMore && !loadings.articles && moreButton}
         </List>
       </Card>
     )

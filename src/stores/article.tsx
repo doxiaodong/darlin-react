@@ -1,18 +1,29 @@
 import {
   observable,
   action,
+  computed,
   runInAction
 } from 'mobx'
 import * as base64 from 'js-base64'
 import { getList } from 'api/article'
+import { Loadings } from 'stores/loadings'
+
+const loadings = new Loadings()
+
 export class ArticleStore {
   @observable articles: any[] = []
   totalArticles: any[] = []
   @observable hasMore: boolean = false
+
+  @computed get loadings() {
+    return loadings.state
+  }
   page: number = 1
   category: string
 
-  getMoreArticles = async () => {
+  @action.bound
+  @loadings.handle('articles')
+  async getMoreArticles() {
     const data = await getList(this.category, this.page)
     return runInAction('update data aftergetMoreArticles', () => {
       if (data.next) {
