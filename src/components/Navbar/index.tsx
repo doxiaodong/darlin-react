@@ -41,7 +41,7 @@ export class Navbar extends React.Component<{ router?: InjectedRouter }, {}> {
                 <Link to='/' className={style.link}>{t('common:account')}</Link>
               </li>
               <li>
-                <Link to='/' className={style.link}>{t('common:self')}</Link>
+                <Link to='/self/links' className={style.link}>{t('common:self')}</Link>
               </li>
               {/*TODO*/}
             </ul>

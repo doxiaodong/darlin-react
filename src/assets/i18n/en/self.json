@@ -1,0 +1,11 @@
+{
+  "genPassword": "Generate Password",
+  "initPassword": "Base Password",
+  "key": "Password Scene",
+  "gen": "Generate",
+  "outputDesc": "Generated Password",
+  "outputDesc15": "Generated Password(length 15)",
+  "copy": "Copy",
+  "copySuccess": "Copy success!",
+  "copyError": "Copy failed!"
+}

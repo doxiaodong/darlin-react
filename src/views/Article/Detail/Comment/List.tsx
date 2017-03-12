@@ -34,7 +34,7 @@ export class CommentList extends React.Component<{ params?: InjectedRouter }, {}
           <div className={style.right}>
             <div className={style.word}>
               <a>{comment.replyUser.nickname}</a>
-              <Marked md={comment.content} safe />
+              <Marked md={comment.content} safe={true} />
             </div>
             <div className={style.message}>
               <span>{transformDate(comment.time)}</span>
@@ -53,10 +53,12 @@ export class CommentList extends React.Component<{ params?: InjectedRouter }, {}
       )
     })
 
-    return <ul>
-      {!loadings.comments && listItem}
-      {loadings.comments && <Loading />}
-    </ul>
+    return (
+      <ul>
+        {!loadings.comments && listItem}
+        {loadings.comments && <Loading />}
+      </ul>
+    )
   }
 }
 
@@ -73,7 +75,7 @@ function renderSubReplies(replies) {
               <span>&nbsp;{t('article:reply')}&nbsp;</span>
               <a>{subReply.replyObject.nickname}</a>
             </div>
-            <Marked md={subReply.content} safe />
+            <Marked md={subReply.content} safe={true} />
           </div>
           <div className={style.message}>
             <span>{transformDate(subReply.time)}</span>

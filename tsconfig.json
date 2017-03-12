@@ -28,7 +28,8 @@
       "highlight.js",
       "marked",
       "mathjax",
-      "uuid"
+      "uuid",
+      "clipboard"
     ]
   },
   "exclude": [

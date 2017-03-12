@@ -26,6 +26,15 @@ export const rootRoute: RouteConfig = {
           cb(null, require('views/Article/Detail').ViewArticleDetail)
         })
       }
+    },
+    {
+      path: '/self/links',
+
+      getComponent(nextState, cb) {
+        require['ensure']([], (require) => {
+          cb(null, require('views/Self').ViewSelf)
+        })
+      }
     }
   ]
 }
