@@ -4,8 +4,8 @@ import store from './store'
 class SelfForm extends Form {
   onSuccess(form) {
     super.onSuccess(form)
-    const { password, scene } = form.values()
-    store.genPassword(password, scene)
+    const { password, key } = form.values()
+    store.genPassword(password, key)
   }
 
   onError(form) {

@@ -42,6 +42,7 @@ export class ViewSelf extends React.Component<{}, {}> {
                 style={textFieldStyle}
                 errorText={form['$']('password').error}
                 floatingLabelText={t('self:initPassword')}
+                type='password'
               />
               <TextField
                 {...form['$']('key').bind()}
