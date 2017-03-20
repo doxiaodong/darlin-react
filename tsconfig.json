@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2017",
     "module": "commonjs",
     "strictNullChecks": false,
     "noUnusedLocals": true,
@@ -10,7 +10,7 @@
     "experimentalDecorators": true,
     "baseUrl": "./src",
     "lib": [
-      "es2015",
+      "es2017",
       "dom"
     ],
     "jsx": "react",
