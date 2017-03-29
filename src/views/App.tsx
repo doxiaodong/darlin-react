@@ -3,9 +3,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 // import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import {
-  browserHistory,
-  Router
-} from 'react-router'
+  ,
+  BrowserRouter as Router
+} from 'react-router-dom'
 import { rootRoute } from './route'
 
 import 'styles/global.scss'
