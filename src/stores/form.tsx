@@ -4,11 +4,8 @@ import * as validatorjs from 'validatorjs'
 const plugins = { dvr: validatorjs }
 
 export class Form extends MobxReactForm {
-  constructor(...arg) {
-    if (!arg[1]) {
-      arg[1] = { plugins }
-    }
-    super(...arg)
+  constructor(fields?) {
+    super(fields, {plugins})
   }
 
   onSuccess(form) {

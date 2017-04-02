@@ -38,14 +38,14 @@ export class ViewSelf extends React.Component<{}, {}> {
           <CardText>
             <form onSubmit={form['onSubmit']} onChange={resetGenPassword}>
               <TextField
-                {...form['$']('password').bind() }
+                {...form['$']('password').bind()}
                 style={textFieldStyle}
                 errorText={form['$']('password').error}
                 floatingLabelText={t('self:initPassword')}
                 type="password"
               />
               <TextField
-                {...form['$']('key').bind() }
+                {...form['$']('key').bind()}
                 style={textFieldStyle}
                 errorText={form['$']('key').error}
                 floatingLabelText={t('self:key')}

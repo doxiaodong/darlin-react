@@ -13,12 +13,17 @@ class SelfForm extends Form {
   }
 }
 
-const fields = [{
-  name: 'password',
-  rules: ''
-}, {
-  name: 'key',
-  rules: 'required'
-}]
+const fields = {
+  password: {
+    label: 'Password',
+    value: '',
+    rules: ''
+  },
+  key: {
+    label: 'Key',
+    value: '',
+    rules: 'required'
+  }
+}
 
 export default new SelfForm({ fields })
