@@ -44,7 +44,7 @@ export class ViewArticleDetail extends React.Component<{ params?: any }, {}> {
             <CategoryWithRouter />
           </div>
           <div className={styleList.left}>
-            <Card className='each-block'>
+            <Card className="each-block">
               <CardHeader
                 title={articleTitle}
                 style={headerStyle}

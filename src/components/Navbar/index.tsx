@@ -31,17 +31,17 @@ export class Navbar extends React.Component<{ router?: InjectedRouter }, {}> {
             <div className={style.current} tabIndex={store.current} />
             <ul className={style.list}>
               <li>
-                <Link to='/' className={style.link}>{t('common:home')}</Link>
+                <Link to="/" className={style.link}>{t('common:home')}</Link>
               </li>
               <li>
-                <Link to='/article/all' className={style.link}>{t('common:articles')}</Link>
+                <Link to="/article/all" className={style.link}>{t('common:articles')}</Link>
               </li>
               {/*TODO*/}
               <li>
-                <Link to='/' className={style.link}>{t('common:account')}</Link>
+                <Link to="/" className={style.link}>{t('common:account')}</Link>
               </li>
               <li>
-                <Link to='/self/links' className={style.link}>{t('common:self')}</Link>
+                <Link to="/self/links" className={style.link}>{t('common:self')}</Link>
               </li>
               {/*TODO*/}
             </ul>

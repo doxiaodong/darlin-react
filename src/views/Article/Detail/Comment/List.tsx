@@ -30,7 +30,7 @@ export class CommentList extends React.Component<{ params?: InjectedRouter }, {}
     const listItem = store.comments.map((comment) => {
       return (
         <li key={comment.url} className={style.reply}>
-          <img src={comment.replyUser.pic} alt='' className={`${style.left} ${style.pic}`} />
+          <img src={comment.replyUser.pic} alt="" className={`${style.left} ${style.pic}`} />
           <div className={style.right}>
             <div className={style.word}>
               <a>{comment.replyUser.nickname}</a>
@@ -67,7 +67,7 @@ function renderSubReplies(replies) {
   return replies.map((subReply) => {
     return (
       <li key={subReply.__id__} className={style.reply}>
-        <img src={subReply.replyUser.pic} alt='' className={`${style.left} ${style.pic}`} />
+        <img src={subReply.replyUser.pic} alt="" className={`${style.left} ${style.pic}`} />
         <div className={style.right}>
           <div className={style.word}>
             <div>

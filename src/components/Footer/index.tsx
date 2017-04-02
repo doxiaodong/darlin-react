@@ -37,9 +37,9 @@ export class Footer extends React.Component<{}, {}> {
     return (
       <footer className={style.footer}>
         <div className={style.content}>
-          <a href='http://www.miitbeian.gov.cn/' target='_blank'>蜀ICP备15013600号-1</a> @<a>react.darlin.me</a>
+          <a href="http://www.miitbeian.gov.cn/" target="_blank">蜀ICP备15013600号-1</a> @<a>react.darlin.me</a>
           <div className={style.i18n} onClick={this.stopPropagation}>
-            <p className='a' onClick={store.toggleShow}>{t('common:langSetting')}</p>
+            <p className="a" onClick={store.toggleShow}>{t('common:langSetting')}</p>
             {store.showLang && list}
           </div>
         </div>

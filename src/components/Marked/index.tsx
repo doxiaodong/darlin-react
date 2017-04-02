@@ -61,7 +61,7 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
     if (safe) {
       html = xss(html, { whiteList })
     }
-    return <div ref={this.ref} className='markdown' dangerouslySetInnerHTML={{ __html: html }} />
+    return <div ref={this.ref} className="markdown" dangerouslySetInnerHTML={{ __html: html }} />
   }
 
 }

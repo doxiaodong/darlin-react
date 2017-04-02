@@ -8,7 +8,7 @@ export class Common extends React.Component<{}, {}> {
 
   render() {
     return (
-      <div className='h100'>
+      <div className="h100">
         <NavbarWithRouter />
         <article className={style.article}>
           {this.props.children}

@@ -19,7 +19,7 @@ export class Comment extends React.Component<{}, {}> {
     const { t } = i18nStore
     const { articleReplies } = store
     return (
-      <Card className='each-block'>
+      <Card className="each-block">
         <CardHeader
           style={headerStyle}
         >

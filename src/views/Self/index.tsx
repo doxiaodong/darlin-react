@@ -29,7 +29,7 @@ export class ViewSelf extends React.Component<{}, {}> {
     const { t } = i18nStore
     return (
       <Page title={t('common:self')}>
-        <Card className='each-block'>
+        <Card className="each-block">
           <CardHeader
             title={t('self:genPassword')}
             style={headerStyle}
@@ -38,20 +38,20 @@ export class ViewSelf extends React.Component<{}, {}> {
           <CardText>
             <form onSubmit={form['onSubmit']} onChange={resetGenPassword}>
               <TextField
-                {...form['$']('password').bind()}
+                {...form['$']('password').bind() }
                 style={textFieldStyle}
                 errorText={form['$']('password').error}
                 floatingLabelText={t('self:initPassword')}
-                type='password'
+                type="password"
               />
               <TextField
-                {...form['$']('key').bind()}
+                {...form['$']('key').bind() }
                 style={textFieldStyle}
                 errorText={form['$']('key').error}
                 floatingLabelText={t('self:key')}
               />
 
-              <RaisedButton type='submit' primary={true} label={t('self:gen')} />
+              <RaisedButton type="submit" primary={true} label={t('self:gen')} />
             </form>
 
             <div className={style.gencontainer}>

@@ -56,7 +56,7 @@ export class BaseList extends React.Component<{ articles: any[] }, {}> {
       </div>
     )
     return (
-      <Card className='each-block'>
+      <Card className="each-block">
         <CardHeader
           title={t('article:articleList')}
           style={headerStyle}
