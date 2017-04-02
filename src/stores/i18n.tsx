@@ -34,11 +34,9 @@ export class I18nStore {
    */
   namespace(name: string[]) {
     return (target) => {
-      const componentDidMount = target.prototype.componentDidMount
-      target.prototype.componentDidMount = (...args) => {
+      setTimeout(() => {
         this.loadNamespaces(name)
-        return componentDidMount.apply(target, args)
-      }
+      }, 0)
     }
   }
 
