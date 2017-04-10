@@ -1,7 +1,6 @@
 import {
   observable,
-  computed,
-  action
+  computed
 } from 'mobx'
 
 export interface IUser {

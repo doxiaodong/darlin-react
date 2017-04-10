@@ -29,7 +29,7 @@ export class I18nStore {
   }
 
   /**
-   * Decorator to loadNamespaces when componentDidMount
+   * Decorator to loadNamespaces
    * @param {string[]} name : namespace
    */
   namespace(name: string[]) {

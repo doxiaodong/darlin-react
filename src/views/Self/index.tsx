@@ -23,7 +23,7 @@ import * as style from './style.scss'
 
 @i18nStore.namespace(['self'])
 @observer
-export class ViewSelf extends React.Component<{}, {}> {
+export class ViewSelf extends React.Component<void, void> {
   render() {
     const { output, output15, resetGenPassword, copy, copyOpenState, autoCloseCopyState } = store
     const { t } = i18nStore

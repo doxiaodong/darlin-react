@@ -1,8 +1,8 @@
 import * as React from 'react'
 import {
   withRouter,
-  InjectedRouter
-} from 'react-router'
+  RouteComponentProps
+} from 'react-router-dom'
 import {
   List,
   ListItem,
@@ -27,21 +27,17 @@ import * as style from './style.scss'
 const SelectableList = makeSelectable(List)
 
 @observer
-export class Category extends React.Component<{
-  params?: any,
-  router?: InjectedRouter
-}, {}> {
-
+export class Category extends React.Component<RouteComponentProps<{ category: string }>, void> {
   handleRequestChange = (event, key) => {
     store.setKey(key)
-    this.props.router.push({
+    this.props.history.push({
       pathname: `/article/${key}`
     })
   }
 
   componentDidMount() {
     store.getArticleCategories()
-    store.setKey(this.props.params.category)
+    store.setKey(this.props.match.params.category)
   }
 
   render() {

@@ -4,7 +4,7 @@ import { Footer } from 'components/Footer'
 
 import * as style from './common.scss'
 
-export class Common extends React.Component<{}, {}> {
+export class Common extends React.Component<void, void> {
 
   render() {
     return (

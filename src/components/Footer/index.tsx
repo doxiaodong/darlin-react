@@ -6,7 +6,7 @@ import store from './store'
 import * as style from './style.scss'
 
 @observer
-export class Footer extends React.Component<{}, {}> {
+export class Footer extends React.Component<void, void> {
 
   componentDidMount() {
     document.addEventListener('click', store.close)

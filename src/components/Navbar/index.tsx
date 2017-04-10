@@ -2,8 +2,8 @@ import * as React from 'react'
 import {
   Link,
   withRouter,
-  InjectedRouter
-} from 'react-router'
+  RouteComponentProps
+} from 'react-router-dom'
 import { observer } from 'mobx-react'
 import i18nStore from 'stores/i18n'
 import store from './store'
@@ -11,14 +11,14 @@ import store from './store'
 import * as style from './style.scss'
 
 @observer
-export class Navbar extends React.Component<{ router?: InjectedRouter }, {}> {
+export class Navbar extends React.Component<RouteComponentProps<any>, void> {
 
   componentDidMount() {
-    store.setLocation(this.props.router['location'])
+    store.setLocation(this.props.location)
   }
 
   componentWillReceiveProps(nextProps) {
-    store.setLocation(this.props.router['location'])
+    store.setLocation(nextProps.location)
   }
 
   render() {

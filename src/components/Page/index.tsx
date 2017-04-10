@@ -4,7 +4,7 @@ import { Title } from 'components/Title'
 import * as style from './style.scss'
 
 @observer
-export class Page extends React.Component<{ title: string }, {}> {
+export class Page extends React.Component<{ title: string }, void> {
 
   render() {
     const { title } = this.props

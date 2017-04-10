@@ -2,8 +2,8 @@ import * as React from 'react'
 import { observer } from 'mobx-react'
 import {
   withRouter,
-  InjectedRouter
-} from 'react-router'
+  RouteComponentProps
+} from 'react-router-dom'
 import * as base64 from 'js-base64'
 import IconButton from 'material-ui/IconButton'
 import ContentReply from 'material-ui/svg-icons/content/reply'
@@ -17,10 +17,10 @@ import store from './store'
 import * as style from './style.scss'
 
 @observer
-export class CommentList extends React.Component<{ params?: InjectedRouter }, {}> {
+export class CommentList extends React.Component<RouteComponentProps<{ url: string }>, void> {
 
   componentDidMount() {
-    store.getComments(base64.Base64.decode(this.props.params['url']))
+    store.getComments(base64.Base64.decode(this.props.match.params.url))
   }
 
   render() {

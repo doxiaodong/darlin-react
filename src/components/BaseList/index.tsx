@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import { observer } from 'mobx-react'
 import {
   List,
@@ -25,7 +25,7 @@ import * as style from './style.scss'
 
 @i18nStore.namespace(['article'])
 @observer
-export class BaseList extends React.Component<{ articles: any[] }, {}> {
+export class BaseList extends React.Component<{ articles: any[] }, void> {
 
   render() {
     const { articles } = this.props
