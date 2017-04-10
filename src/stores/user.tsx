@@ -14,7 +14,6 @@ export interface IUser {
   third: string
 }
 
-
 export class UserStore {
 
   private requestingUser
