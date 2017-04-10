@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { observer } from 'mobx-react'
+import { RouteComponentProps } from 'react-router-dom'
 import { Page } from 'components/Page'
 import { BaseList } from 'components/BaseList'
 import { CategoryWithRouter } from 'components/Category'
@@ -9,16 +10,16 @@ import i18nStore from 'stores/i18n'
 import * as style from './style.scss'
 
 @observer
-export class ViewArticleList extends React.Component<{ params?: any }, {}> {
+export class ViewArticleList extends React.Component<RouteComponentProps<{ category: string }>, void> {
 
   componentWillReceiveProps(nextProps) {
-    const nextCategory = nextProps.params.category
-    if (nextCategory !== this.props.params.category) {
+    const nextCategory = nextProps.match.params.category
+    if (nextCategory !== this.props.match.params.category) {
       articleStore.getArticleList(nextCategory)
     }
   }
   componentDidMount() {
-    articleStore.getArticleList(this.props.params.category)
+    articleStore.getArticleList(this.props.match.params.category)
   }
 
   render() {

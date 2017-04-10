@@ -12,7 +12,7 @@ const ms = markedService.init()
 const whiteList = xss.whiteList
 whiteList.img.push('class')
 
-export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> {
+export class Marked extends React.Component<{ md: string, safe?: boolean }, void> {
 
   ele
 

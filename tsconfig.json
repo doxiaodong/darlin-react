@@ -13,24 +13,7 @@
       "es2017",
       "dom"
     ],
-    "jsx": "react",
-    "outDir": "dist",
-    "types": [
-      "react",
-      "react-dom",
-      "react-router",
-      "i18next",
-      "react-tap-event-plugin",
-      "material-ui",
-      "crypto-js",
-      "jest",
-      "node",
-      "highlight.js",
-      "marked",
-      "mathjax",
-      "uuid",
-      "clipboard"
-    ]
+    "jsx": "react"
   },
   "exclude": [
     "node_modules"

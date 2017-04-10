@@ -7,7 +7,7 @@ import articleStore from 'stores/article'
 import i18nStore from 'stores/i18n'
 
 @observer
-export class ViewHome extends React.Component<{}, {}> {
+export class ViewHome extends React.Component<void, void> {
 
   getArticleList = () => {
     articleStore.getArticleList('hot')

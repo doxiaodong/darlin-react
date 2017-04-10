@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { observer } from 'mobx-react'
+import { RouteComponentProps } from 'react-router-dom'
 import {
   Card,
   CardHeader,
@@ -23,10 +24,10 @@ import * as styleList from '../List/style.scss'
 
 @i18nStore.namespace(['article'])
 @observer
-export class ViewArticleDetail extends React.Component<{ params?: any }, {}> {
+export class ViewArticleDetail extends React.Component<RouteComponentProps<{ url: string }>, void> {
 
   componentWillMount() {
-    store.getArticleDetail(this.props.params.url)
+    store.getArticleDetail(this.props.match.params.url)
   }
 
   componentWillUnmount() {

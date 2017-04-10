@@ -1,14 +1,19 @@
 import * as React from 'react'
+import {
+  observable,
+  action
+} from 'mobx'
 import { observer } from 'mobx-react'
 import { LocalStorage } from 'base/local-storage'
 import i18nStore from 'stores/i18n'
 
 @observer
-export class Visibility extends React.Component<{ visibilityTitle: string }, {}> {
+export class Visibility extends React.Component<{ visibilityTitle: string }, void> {
 
-  visibilityTitle: string = ''
+  @observable visibilityTitle: string = ''
 
-  visibilitychangeEvent = () => {
+  @action.bound
+  visibilitychangeEvent() {
     const state = document.visibilityState
     if (state === 'hidden') {
       LocalStorage.saveSession('visibilityChangeTitle', document.title)
