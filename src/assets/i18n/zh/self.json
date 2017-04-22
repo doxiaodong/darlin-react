@@ -7,5 +7,9 @@
   "outputDesc15": "生成的密码(长度15)",
   "copy": "复制",
   "copySuccess": "复制成功!",
-  "copyError": "复制失败!"
+  "copyError": "复制失败!",
+  "type": {
+    "blog": "博客",
+    "shop": "小店"
+  }
 }

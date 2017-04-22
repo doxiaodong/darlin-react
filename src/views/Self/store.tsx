@@ -1,9 +1,14 @@
 import {
   observable,
   computed,
-  action
+  action,
+  runInAction
 } from 'mobx'
 import { MD5, SHA512 } from 'crypto-js'
+import { getLinks } from 'api/links'
+import { Loadings } from 'stores/loadings'
+
+const loadings = new Loadings()
 
 export class SelfStore {
   @observable output = ''
@@ -11,7 +16,13 @@ export class SelfStore {
     return this.output.slice(0, 14)
   }
 
+  @computed get loadings() {
+    return loadings.state
+  }
+
   @observable copyOpenState = false
+
+  @observable links = []
 
   @action.bound resetGenPassword() {
     this.output = ''
@@ -32,6 +43,16 @@ export class SelfStore {
 
   @action.bound autoCloseCopyState() {
     this.copyOpenState = false
+  }
+
+  @action.bound
+  @loadings.handle('links')
+  async getLinks() {
+    this.links = []
+    const data = await getLinks()
+    runInAction('get links', () => {
+      this.links = data.results
+    })
   }
 
 }

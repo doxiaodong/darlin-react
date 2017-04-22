@@ -7,5 +7,9 @@
   "outputDesc15": "Generated Password(length 15)",
   "copy": "Copy",
   "copySuccess": "Copy success!",
-  "copyError": "Copy failed!"
+  "copyError": "Copy failed!",
+  "type": {
+    "blog": "Blog",
+    "shop": "Shop"
+  }
 }

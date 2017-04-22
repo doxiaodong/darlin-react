@@ -6,10 +6,16 @@ import {
   CardHeader,
   CardText
 } from 'material-ui/Card'
+import {
+  List,
+  ListItem
+} from 'material-ui/List'
 import RaisedButton from 'material-ui/RaisedButton'
 import Snackbar from 'material-ui/Snackbar'
 import { Page } from 'components/Page'
 import { Clip } from 'components/Clip'
+import { Divider } from 'components/Divider'
+import { Loading } from 'components/Loading'
 import {
   headerStyle,
   titleStyle
@@ -25,8 +31,23 @@ import * as style from './style.scss'
 @observer
 export class ViewSelf extends React.Component<void, void> {
   render() {
-    const { output, output15, resetGenPassword, copy, copyOpenState, autoCloseCopyState } = store
+    const { output, output15, resetGenPassword, copy, copyOpenState, autoCloseCopyState, links, loadings } = store
     const { t } = i18nStore
+    const listItem = links.map((link, index) =>
+      (
+        <div key={link.url}>
+          {index > 0 && <Divider />}
+          <a href={link.url} target="_blank">
+            <ListItem>
+              <div>
+                {index + 1}. <span className="badge">{t('self:type.' + link.type)}</span>{link.title}
+              </div>
+            </ListItem>
+          </a>
+        </div>
+      )
+    )
+
     return (
       <Page title={t('common:self')}>
         <Card className="each-block">
@@ -38,14 +59,14 @@ export class ViewSelf extends React.Component<void, void> {
           <CardText>
             <form onSubmit={form['onSubmit']} onChange={resetGenPassword}>
               <TextField
-                {...form['$']('password').bind()}
+                {...form['$']('password').bind() }
                 style={textFieldStyle}
                 errorText={form['$']('password').error}
                 floatingLabelText={t('self:initPassword')}
                 type="password"
               />
               <TextField
-                {...form['$']('key').bind()}
+                {...form['$']('key').bind() }
                 style={textFieldStyle}
                 errorText={form['$']('key').error}
                 floatingLabelText={t('self:key')}
@@ -67,6 +88,18 @@ export class ViewSelf extends React.Component<void, void> {
               {output15 && <Clip value={output15} onClip={copy}><RaisedButton label={t('self:copy')} /></Clip>}
             </div>
           </CardText>
+        </Card>
+        <Card className="each-block">
+          <CardHeader
+            title={t('self:genPassword')}
+            style={headerStyle}
+            titleStyle={titleStyle}
+          />
+          <List style={{ paddingTop: 0 }}>
+            {listItem}
+
+            {loadings.links && <Loading />}
+          </List>
         </Card>
         <Snackbar
           open={copyOpenState}
