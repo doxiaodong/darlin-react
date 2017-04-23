@@ -1,12 +1,17 @@
 import * as React from 'react'
+import { observer } from 'mobx-react'
+import Snackbar from 'material-ui/Snackbar'
 import { NavbarWithRouter } from 'components/Navbar'
 import { Footer } from 'components/Footer'
+import store from 'stores/snack'
 
 import * as style from './common.scss'
 
+@observer
 export class Common extends React.Component<void, void> {
 
   render() {
+    const { isOpen, message } = store
     return (
       <div className="h100">
         <NavbarWithRouter />
@@ -15,6 +20,11 @@ export class Common extends React.Component<void, void> {
         </article>
         <Footer />
         <div className={style.bgpicture} />
+        <Snackbar
+          open={isOpen}
+          message={message}
+          autoHideDuration={2000}
+        />
       </div>
     )
   }

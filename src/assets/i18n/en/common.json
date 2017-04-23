@@ -7,5 +7,18 @@
   "logout": "Logout",
   "langSetting": "语言设置",
   "visibilityTitle": "Click me !!",
-  "titleSuffix": " -- darlin.me"
+  "titleSuffix": " -- darlin.me",
+  "error": {
+    "400": "Server Error",
+    "500": "Server Error",
+    "400001": "The user is exist",
+    "400002": "The username begin with _ is not allowed",
+    "400003": "Invalid username or password",
+    "400004": "The user is not exist",
+    "400005": "Modify the third is not allowed",
+    "400006": "The uer is not actived",
+    "400007": "Not allowed",
+    "400008": "Not allowed null reply",
+    "401001": "Login first"
+  },
 }

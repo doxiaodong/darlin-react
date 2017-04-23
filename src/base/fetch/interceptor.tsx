@@ -3,6 +3,8 @@ import {
   getCookie,
   getAESToken
 } from 'base/utils'
+import snackStore from 'stores/snack'
+import i18nStore from 'stores/i18n'
 
 export const corsInterceptor = new Interceptor({
   cors: {
@@ -32,7 +34,28 @@ export const tokenInterceptor = new Interceptor({
   }
 })
 
+export const errorInterceptor = new Interceptor({
+  error: {
+    id: 2,
+    async error(res) {
+      let errorCode
+      try {
+        const body = await res.clone().json()
+        errorCode = body && body.code
+      } catch (error) {
+        errorCode = res.status
+      }
+      console.log(errorCode)
+
+      const str = i18nStore.t(`common:error.${errorCode + ''}`)
+      snackStore.open(`[${errorCode}]${str}`)
+
+      return res
+    }
+  }
+})
+
 // merge
-const interceptors = corsInterceptor.merge(tokenInterceptor)
+const interceptors = corsInterceptor.merge(tokenInterceptor).merge(errorInterceptor)
 
 export default interceptors

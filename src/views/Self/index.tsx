@@ -12,6 +12,7 @@ import {
 } from 'material-ui/List'
 import RaisedButton from 'material-ui/RaisedButton'
 import Snackbar from 'material-ui/Snackbar'
+import Chip from 'material-ui/Chip'
 import { Page } from 'components/Page'
 import { Clip } from 'components/Clip'
 import { Divider } from 'components/Divider'
@@ -30,6 +31,9 @@ import * as style from './style.scss'
 @i18nStore.namespace(['self'])
 @observer
 export class ViewSelf extends React.Component<void, void> {
+  componentDidMount() {
+    store.getLinks()
+  }
   render() {
     const { output, output15, resetGenPassword, copy, copyOpenState, autoCloseCopyState, links, loadings } = store
     const { t } = i18nStore
@@ -39,8 +43,10 @@ export class ViewSelf extends React.Component<void, void> {
           {index > 0 && <Divider />}
           <a href={link.url} target="_blank">
             <ListItem>
-              <div>
-                {index + 1}. <span className="badge">{t('self:type.' + link.type)}</span>{link.title}
+              <div className={style.link}>
+                {index + 1}.&nbsp;
+                <Chip>{t('self:type.' + link.type)}</Chip>
+                &nbsp;{link.title}
               </div>
             </ListItem>
           </a>
@@ -91,7 +97,7 @@ export class ViewSelf extends React.Component<void, void> {
         </Card>
         <Card className="each-block">
           <CardHeader
-            title={t('self:genPassword')}
+            title={t('self:links')}
             style={headerStyle}
             titleStyle={titleStyle}
           />

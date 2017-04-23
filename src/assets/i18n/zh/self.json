@@ -8,6 +8,7 @@
   "copy": "复制",
   "copySuccess": "复制成功!",
   "copyError": "复制失败!",
+  "links": "友情链接",
   "type": {
     "blog": "博客",
     "shop": "小店"

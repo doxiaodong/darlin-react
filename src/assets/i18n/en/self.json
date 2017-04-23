@@ -8,6 +8,7 @@
   "copy": "Copy",
   "copySuccess": "Copy success!",
   "copyError": "Copy failed!",
+  "links": "Links",
   "type": {
     "blog": "Blog",
     "shop": "Shop"
