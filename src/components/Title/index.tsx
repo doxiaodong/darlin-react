@@ -4,7 +4,7 @@ import { Visibility } from './Visibility'
 import i18nStore from 'stores/i18n'
 
 @observer
-export class Title extends React.Component<{ title: string }, void> {
+export class Title extends React.Component<{ title: string }, {}> {
 
   updateTitle(props) {
     const nextTitle = (props.title || '') + i18nStore.t('common:titleSuffix')

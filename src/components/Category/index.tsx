@@ -27,7 +27,7 @@ import * as style from './style.scss'
 const SelectableList = makeSelectable(List)
 
 @observer
-export class Category extends React.Component<RouteComponentProps<{ category: string }>, void> {
+export class Category extends React.Component<RouteComponentProps<{ category: string }>, {}> {
   handleRequestChange = (event, key) => {
     store.setKey(key)
     this.props.history.push({

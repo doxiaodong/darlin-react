@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { observer } from 'mobx-react'
+import { RouteComponentProps } from 'react-router-dom'
 import TextField from 'material-ui/TextField'
 import {
   Card,
@@ -30,7 +31,7 @@ import * as style from './style.scss'
 
 @i18nStore.namespace(['self'])
 @observer
-export class ViewSelf extends React.Component<void, void> {
+export class ViewSelf extends React.Component<RouteComponentProps<{}>, {}> {
   componentDidMount() {
     store.getLinks()
   }
@@ -65,15 +66,15 @@ export class ViewSelf extends React.Component<void, void> {
           <CardText>
             <form onSubmit={form['onSubmit']} onChange={resetGenPassword}>
               <TextField
-                {...form['$']('password').bind() }
                 style={textFieldStyle}
+                {...form['$']('password').bind()}
                 errorText={form['$']('password').error}
                 floatingLabelText={t('self:initPassword')}
                 type="password"
               />
               <TextField
-                {...form['$']('key').bind() }
                 style={textFieldStyle}
+                {...form['$']('key').bind()}
                 errorText={form['$']('key').error}
                 floatingLabelText={t('self:key')}
               />

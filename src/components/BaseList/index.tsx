@@ -25,7 +25,7 @@ import * as style from './style.scss'
 
 @i18nStore.namespace(['article'])
 @observer
-export class BaseList extends React.Component<{ articles: any[] }, void> {
+export class BaseList extends React.Component<{ articles: any[] }, {}> {
 
   render() {
     const { articles } = this.props

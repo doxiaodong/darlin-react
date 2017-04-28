@@ -8,7 +8,7 @@ import store from 'stores/snack'
 import * as style from './common.scss'
 
 @observer
-export class Common extends React.Component<void, void> {
+export class Common extends React.Component<{}, {}> {
 
   render() {
     const { isOpen, message } = store

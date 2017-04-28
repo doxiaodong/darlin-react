@@ -24,7 +24,7 @@ const theme = getMuiTheme({
   }
 })
 
-class App extends React.Component<void, void> {
+class App extends React.Component<{}, {}> {
 
   render() {
     return (
