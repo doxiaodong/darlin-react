@@ -11,7 +11,7 @@ import store from './store'
 import * as style from './style.scss'
 
 @observer
-export class Navbar extends React.Component<RouteComponentProps<any>, void> {
+export class Navbar extends React.Component<RouteComponentProps<any>, {}> {
 
   componentDidMount() {
     store.setLocation(this.props.location)

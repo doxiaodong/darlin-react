@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as Clipboard from 'clipboard'
 
-export class Clip extends React.Component<{ value, onClip }, void> {
+export class Clip extends React.Component<{ value, onClip }, {}> {
 
   content: string = ''
   clipboard: Clipboard

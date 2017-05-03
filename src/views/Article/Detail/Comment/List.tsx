@@ -17,7 +17,7 @@ import store from './store'
 import * as style from './style.scss'
 
 @observer
-export class CommentList extends React.Component<RouteComponentProps<{ url: string }>, void> {
+export class CommentList extends React.Component<RouteComponentProps<{ url: string }>, {}> {
 
   componentDidMount() {
     store.getComments(base64.Base64.decode(this.props.match.params.url))

@@ -1,15 +1,23 @@
 import * as React from 'react'
 import { observer } from 'mobx-react'
+import { RouteComponentProps } from 'react-router-dom'
 import TextField from 'material-ui/TextField'
 import {
   Card,
   CardHeader,
   CardText
 } from 'material-ui/Card'
+import {
+  List,
+  ListItem
+} from 'material-ui/List'
 import RaisedButton from 'material-ui/RaisedButton'
 import Snackbar from 'material-ui/Snackbar'
+import Chip from 'material-ui/Chip'
 import { Page } from 'components/Page'
 import { Clip } from 'components/Clip'
+import { Divider } from 'components/Divider'
+import { Loading } from 'components/Loading'
 import {
   headerStyle,
   titleStyle
@@ -23,10 +31,30 @@ import * as style from './style.scss'
 
 @i18nStore.namespace(['self'])
 @observer
-export class ViewSelf extends React.Component<void, void> {
+export class ViewSelf extends React.Component<RouteComponentProps<{}>, {}> {
+  componentDidMount() {
+    store.getLinks()
+  }
   render() {
-    const { output, output15, resetGenPassword, copy, copyOpenState, autoCloseCopyState } = store
+    const { output, output15, resetGenPassword, copy, copyOpenState, autoCloseCopyState, links, loadings } = store
     const { t } = i18nStore
+    const listItem = links.map((link, index) =>
+      (
+        <div key={link.url}>
+          {index > 0 && <Divider />}
+          <a href={link.url} target="_blank">
+            <ListItem>
+              <div className={style.link}>
+                {index + 1}.&nbsp;
+                <Chip>{t('self:type.' + link.type)}</Chip>
+                &nbsp;{link.title}
+              </div>
+            </ListItem>
+          </a>
+        </div>
+      )
+    )
+
     return (
       <Page title={t('common:self')}>
         <Card className="each-block">
@@ -38,15 +66,15 @@ export class ViewSelf extends React.Component<void, void> {
           <CardText>
             <form onSubmit={form['onSubmit']} onChange={resetGenPassword}>
               <TextField
-                {...form['$']('password').bind()}
                 style={textFieldStyle}
+                {...form['$']('password').bind()}
                 errorText={form['$']('password').error}
                 floatingLabelText={t('self:initPassword')}
                 type="password"
               />
               <TextField
-                {...form['$']('key').bind()}
                 style={textFieldStyle}
+                {...form['$']('key').bind()}
                 errorText={form['$']('key').error}
                 floatingLabelText={t('self:key')}
               />
@@ -67,6 +95,18 @@ export class ViewSelf extends React.Component<void, void> {
               {output15 && <Clip value={output15} onClip={copy}><RaisedButton label={t('self:copy')} /></Clip>}
             </div>
           </CardText>
+        </Card>
+        <Card className="each-block">
+          <CardHeader
+            title={t('self:links')}
+            style={headerStyle}
+            titleStyle={titleStyle}
+          />
+          <List style={{ paddingTop: 0 }}>
+            {listItem}
+
+            {loadings.links && <Loading />}
+          </List>
         </Card>
         <Snackbar
           open={copyOpenState}

@@ -10,7 +10,7 @@ import i18nStore from 'stores/i18n'
 import * as style from './style.scss'
 
 @observer
-export class ViewArticleList extends React.Component<RouteComponentProps<{ category: string }>, void> {
+export class ViewArticleList extends React.Component<RouteComponentProps<{ category: string }>, {}> {
 
   componentWillReceiveProps(nextProps) {
     const nextCategory = nextProps.match.params.category

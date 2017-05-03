@@ -13,7 +13,7 @@ import store from './store'
 import * as style from './style.scss'
 
 @observer
-export class Comment extends React.Component<void, void> {
+export class Comment extends React.Component<{}, {}> {
 
   render() {
     const { t } = i18nStore

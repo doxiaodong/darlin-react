@@ -24,7 +24,7 @@ import * as styleList from '../List/style.scss'
 
 @i18nStore.namespace(['article'])
 @observer
-export class ViewArticleDetail extends React.Component<RouteComponentProps<{ url: string }>, void> {
+export class ViewArticleDetail extends React.Component<RouteComponentProps<{ url: string }>, {}> {
 
   componentWillMount() {
     store.getArticleDetail(this.props.match.params.url)

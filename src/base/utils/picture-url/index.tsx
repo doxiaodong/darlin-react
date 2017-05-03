@@ -3,8 +3,7 @@ import {
   THIRD_PIC_REG,
   PIC_STATIC_URL_HOST
 } from './constant'
-// import { MD5 } from 'crypto-js'
-import MD5 = require('crypto-js/md5')
+import { MD5 } from 'crypto-js'
 
 const reg = new RegExp(THIRD_PIC_REG)
 

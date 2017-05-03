@@ -8,7 +8,7 @@ import { LocalStorage } from 'base/local-storage'
 import i18nStore from 'stores/i18n'
 
 @observer
-export class Visibility extends React.Component<{ visibilityTitle: string }, void> {
+export class Visibility extends React.Component<{ visibilityTitle: string }, {}> {
 
   @observable visibilityTitle: string = ''
 
