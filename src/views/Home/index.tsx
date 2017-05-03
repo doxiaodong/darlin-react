@@ -10,12 +10,10 @@ import i18nStore from 'stores/i18n'
 @observer
 export class ViewHome extends React.Component<RouteComponentProps<{}>, {}> {
 
-  getArticleList = () => {
-    articleStore.getArticleList('hot')
-  }
-
   componentDidMount() {
-    this.getArticleList()
+    setTimeout(() => {
+      articleStore.getArticleList('hot')
+    }, 0)
   }
 
   render() {

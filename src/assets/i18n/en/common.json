@@ -9,6 +9,7 @@
   "visibilityTitle": "Click me !!",
   "titleSuffix": " -- darlin.me",
   "error": {
+    "unknow": "Unknow Error",
     "400": "Server Error",
     "500": "Server Error",
     "400001": "The user is exist",
@@ -20,5 +21,5 @@
     "400007": "Not allowed",
     "400008": "Not allowed null reply",
     "401001": "Login first"
-  },
+  }
 }

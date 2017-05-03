@@ -45,10 +45,12 @@ export const errorInterceptor = new Interceptor({
       } catch (error) {
         errorCode = res.status
       }
-      console.log(errorCode)
 
-      const str = i18nStore.t(`common:error.${errorCode + ''}`)
-      snackStore.open(`[${errorCode}]${str}`)
+      let str = i18nStore.t(`common:error.${errorCode + ''}`)
+      if (str === `error.${errorCode + ''}`) {
+        str = i18nStore.t(`common:error.unknow`)
+      }
+      snackStore.open(`[${errorCode}] ${str}`)
 
       return res
     }

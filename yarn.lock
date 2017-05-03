@@ -41,11 +41,7 @@
   version "0.0.31"
   resolved "http://registry.npm.taobao.org/@types/mathjax/download/@types/mathjax-0.0.31.tgz#6618b6555082311edbe0ad34cd93408eb43370da"
 
-"@types/node@*":
-  version "7.0.12"
-  resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-7.0.12.tgz#ae5f67a19c15f752148004db07cbbb372e69efc9"
-
-"@types/node@^7.0.15":
+"@types/node@*", "@types/node@^7.0.15":
   version "7.0.15"
   resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-7.0.15.tgz#628429289604c5f7e56c13f3a0422f3e59df1a17"
 
@@ -69,14 +65,7 @@
     "@types/react" "*"
     "@types/react-router" "*"
 
-"@types/react-router@*":
-  version "4.0.4"
-  resolved "http://registry.npm.taobao.org/@types/react-router/download/@types/react-router-4.0.4.tgz#288455d9e20fb475dc39700b1dbf20b7fea1a2ac"
-  dependencies:
-    "@types/history" "*"
-    "@types/react" "*"
-
-"@types/react-router@^4.0.6":
+"@types/react-router@*", "@types/react-router@^4.0.6":
   version "4.0.6"
   resolved "http://registry.npm.taobao.org/@types/react-router/download/@types/react-router-4.0.6.tgz#df5770535d07a1e27d4071a246b5b91c79f2555e"
   dependencies:
@@ -2162,9 +2151,9 @@ inline-style-prefixer@^3.0.2:
     bowser "^1.6.0"
     css-in-js-utils "^1.0.3"
 
-intercept-fetch@^1.1.6:
-  version "1.1.6"
-  resolved "http://registry.npm.taobao.org/intercept-fetch/download/intercept-fetch-1.1.6.tgz#a7bf35d59cc20a59c98e62a1a5da982e65137788"
+intercept-fetch@^1.1.7:
+  version "1.1.7"
+  resolved "http://registry.npm.taobao.org/intercept-fetch/download/intercept-fetch-1.1.7.tgz#6faa0f3c645bc0f7b67a7141aed6b63dd52670cf"
   dependencies:
     deepcopy "^0.6.3"
 
@@ -4930,7 +4919,7 @@ ua-parser-js@^0.7.9:
   version "0.7.12"
   resolved "http://registry.npm.taobao.org/ua-parser-js/download/ua-parser-js-0.7.12.tgz#04c81a99bdd5dc52263ea29d24c6bf8d4818a4bb"
 
-uglify-js@^2.6, uglify-js@^2.8.5, "uglify-js@git://github.com/mishoo/UglifyJS2#harmony", uglify-js@~2.8.22:
+uglify-js@^2.6, uglify-js@^2.8.5, uglify-js@~2.8.22:
   version "2.8.22"
   resolved "git://github.com/mishoo/UglifyJS2#278577f3cb75e72320564805ee91be63e5f9c806"
   dependencies:
