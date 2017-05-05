@@ -1,17 +1,11 @@
 machine:
   node:
-    version: 7.9.0
-  pre:
-    - mkdir ~/.yarn-cache
+    version: 7.10.0
 dependencies:
   pre:
     - curl -o- -L https://yarnpkg.com/install.sh | bash
-  cache_directories:
-    - "~/.yarn-cache"
-  override:
-    - yarn install
 test:
-  pre:
+  override:
     - npm run lint
     - npm run test
     - npm run build:prod
