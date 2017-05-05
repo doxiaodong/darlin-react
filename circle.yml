@@ -4,6 +4,8 @@ machine:
 dependencies:
   pre:
     - curl -o- -L https://yarnpkg.com/install.sh | bash
+  override:
+    - yarn install
 test:
   override:
     - npm run lint
