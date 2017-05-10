@@ -91,4 +91,4 @@ function renderSubReplies(replies) {
   })
 }
 
-export const CommentListWithRouter = withRouter(CommentList)
+export const CommentListWithRouter = withRouter<any>(CommentList)

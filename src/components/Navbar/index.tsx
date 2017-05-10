@@ -52,7 +52,7 @@ export class Navbar extends React.Component<RouteComponentProps<any>, {}> {
   }
 }
 
-export const NavbarWithRouter = withRouter(Navbar)
+export const NavbarWithRouter = withRouter<any>(Navbar)
 
 function Slide(props) {
   const { isLoggedIn } = props

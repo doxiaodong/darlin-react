@@ -75,4 +75,4 @@ export class Category extends React.Component<RouteComponentProps<{ category: st
   }
 }
 
-export const CategoryWithRouter = withRouter(Category)
+export const CategoryWithRouter = withRouter<any>(Category)
