@@ -163,7 +163,7 @@ ansi-html@0.0.7:
   version "0.0.7"
   resolved "http://registry.npm.taobao.org/ansi-html/download/ansi-html-0.0.7.tgz#813584021962a9e9e6fd039f940d12f56ca7859e"
 
-ansi-regex@^2.0.0:
+ansi-regex@^2.0.0, ansi-regex@^2.1.1:
   version "2.1.1"
   resolved "http://registry.npm.taobao.org/ansi-regex/download/ansi-regex-2.1.1.tgz#c3b33ab5ee360d86e0e628f0468ae7ef27d654df"
 
@@ -300,12 +300,12 @@ autoprefixer@^6.3.1:
     postcss "^5.2.16"
     postcss-value-parser "^3.2.3"
 
-autoprefixer@^7.0.1:
-  version "7.0.1"
-  resolved "http://registry.npm.taobao.org/autoprefixer/download/autoprefixer-7.0.1.tgz#472d7620a1b286e55ad1d8345a09d76aaed99d92"
+autoprefixer@^7.1.0:
+  version "7.1.0"
+  resolved "http://registry.npm.taobao.org/autoprefixer/download/autoprefixer-7.1.0.tgz#ae4913adc221fa6ca5ad3a6f8039f6a5c06b3877"
   dependencies:
     browserslist "^2.1.2"
-    caniuse-lite "^1.0.30000665"
+    caniuse-lite "^1.0.30000669"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
     postcss "^6.0.1"
@@ -379,6 +379,14 @@ babel-jest@^20.0.0:
     babel-plugin-istanbul "^4.0.0"
     babel-preset-jest "^20.0.0"
 
+babel-jest@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/babel-jest/download/babel-jest-20.0.1.tgz#9cbe9a15bbe3f1ca1b727dc8e45a4161771d3655"
+  dependencies:
+    babel-core "^6.0.0"
+    babel-plugin-istanbul "^4.0.0"
+    babel-preset-jest "^20.0.1"
+
 babel-messages@^6.23.0:
   version "6.23.0"
   resolved "http://registry.npm.taobao.org/babel-messages/download/babel-messages-6.23.0.tgz#f3cdf4703858035b2a2951c6ec5edf6c62f2630e"
@@ -396,6 +404,10 @@ babel-plugin-istanbul@^4.0.0:
 babel-plugin-jest-hoist@^20.0.0:
   version "20.0.0"
   resolved "http://registry.npm.taobao.org/babel-plugin-jest-hoist/download/babel-plugin-jest-hoist-20.0.0.tgz#d2afe94fa6aea3b8bfa5d61d8028f633c898d86d"
+
+babel-plugin-jest-hoist@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/babel-plugin-jest-hoist/download/babel-plugin-jest-hoist-20.0.1.tgz#1b9cc322cff704d3812d1bca8dccd12205eedfd5"
 
 babel-plugin-transform-es2015-modules-commonjs@^6.24.1:
   version "6.24.1"
@@ -418,6 +430,12 @@ babel-preset-jest@^20.0.0:
   resolved "http://registry.npm.taobao.org/babel-preset-jest/download/babel-preset-jest-20.0.0.tgz#16b992c9351c2525e87a19fd36ba14e47df51bad"
   dependencies:
     babel-plugin-jest-hoist "^20.0.0"
+
+babel-preset-jest@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/babel-preset-jest/download/babel-preset-jest-20.0.1.tgz#8a9e23ce8a0f0c49835de53ed73ecf75dd6daa2e"
+  dependencies:
+    babel-plugin-jest-hoist "^20.0.1"
 
 babel-register@^6.24.1:
   version "6.24.1"
@@ -720,6 +738,10 @@ caniuse-lite@^1.0.30000665:
   version "1.0.30000666"
   resolved "http://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30000666.tgz#831b63247e24fa408e20c6c546c4173d27c5a1a5"
 
+caniuse-lite@^1.0.30000669:
+  version "1.0.30000669"
+  resolved "http://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30000669.tgz#f312f4868722f3ce869ce934da3b536e0e393845"
+
 caseless@~0.12.0:
   version "0.12.0"
   resolved "http://registry.npm.taobao.org/caseless/download/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
@@ -730,6 +752,10 @@ center-align@^0.1.1:
   dependencies:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
+
+chain-function@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/chain-function/download/chain-function-1.0.0.tgz#0d4ab37e7e18ead0bdc47b920764118ce58733dc"
 
 chalk@^1.1.0, chalk@^1.1.1, chalk@^1.1.3:
   version "1.1.3"
@@ -1273,6 +1299,10 @@ dom-converter@~0.1:
   resolved "http://registry.npm.taobao.org/dom-converter/download/dom-converter-0.1.4.tgz#a45ef5727b890c9bffe6d7c876e7b19cb0e17f3b"
   dependencies:
     utila "~0.3"
+
+dom-helpers@^3.2.0:
+  version "3.2.1"
+  resolved "http://registry.npm.taobao.org/dom-helpers/download/dom-helpers-3.2.1.tgz#3203e07fed217bd1f424b019735582fc37b2825a"
 
 dom-serializer@0:
   version "0.1.0"
@@ -2068,9 +2098,9 @@ i18next-xhr-backend@^1.3.0, i18next-xhr-backend@^1.4.1:
   version "1.4.1"
   resolved "http://registry.npm.taobao.org/i18next-xhr-backend/download/i18next-xhr-backend-1.4.1.tgz#ade99356065f51742da9e4bc79c7bb4905a4b91d"
 
-i18next@^8.2.0:
-  version "8.2.0"
-  resolved "http://registry.npm.taobao.org/i18next/download/i18next-8.2.0.tgz#24212d87774d1243e0c48c575331e2a53346b38e"
+i18next@^8.2.1:
+  version "8.2.1"
+  resolved "http://registry.npm.taobao.org/i18next/download/i18next-8.2.1.tgz#6d2e8884516c320b4020c5af63e0316be626ac95"
 
 iconv-lite@0.4.13:
   version "0.4.13"
@@ -2378,13 +2408,13 @@ istanbul-reports@^1.1.0:
   dependencies:
     handlebars "^4.0.3"
 
-jest-changed-files@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest-changed-files/download/jest-changed-files-20.0.0.tgz#2ad82870a815b40ce3f4bf4555581d387b21022c"
+jest-changed-files@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-changed-files/download/jest-changed-files-20.0.1.tgz#ba9bd42c3fddb1b7c4ae40065199b44a2335e152"
 
-jest-cli@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest-cli/download/jest-cli-20.0.0.tgz#72664e0723bd099a0bade5bd4bf960fd54876069"
+jest-cli@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-cli/download/jest-cli-20.0.1.tgz#86ca0bc2e47215ad8e7dc85455c0210f86648502"
   dependencies:
     ansi-escapes "^1.4.0"
     callsites "^2.0.0"
@@ -2395,18 +2425,18 @@ jest-cli@^20.0.0:
     istanbul-lib-coverage "^1.0.1"
     istanbul-lib-instrument "^1.4.2"
     istanbul-lib-source-maps "^1.1.0"
-    jest-changed-files "^20.0.0"
-    jest-config "^20.0.0"
-    jest-docblock "^20.0.0"
-    jest-environment-jsdom "^20.0.0"
-    jest-haste-map "^20.0.0"
-    jest-jasmine2 "^20.0.0"
-    jest-message-util "^20.0.0"
-    jest-regex-util "^20.0.0"
-    jest-resolve-dependencies "^20.0.0"
-    jest-runtime "^20.0.0"
-    jest-snapshot "^20.0.0"
-    jest-util "^20.0.0"
+    jest-changed-files "^20.0.1"
+    jest-config "^20.0.1"
+    jest-docblock "^20.0.1"
+    jest-environment-jsdom "^20.0.1"
+    jest-haste-map "^20.0.1"
+    jest-jasmine2 "^20.0.1"
+    jest-message-util "^20.0.1"
+    jest-regex-util "^20.0.1"
+    jest-resolve-dependencies "^20.0.1"
+    jest-runtime "^20.0.1"
+    jest-snapshot "^20.0.1"
+    jest-util "^20.0.1"
     micromatch "^2.3.11"
     node-notifier "^5.0.2"
     pify "^2.3.0"
@@ -2431,6 +2461,21 @@ jest-config@^20.0.0:
     jest-validate "^20.0.0"
     pretty-format "^20.0.0"
 
+jest-config@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-config/download/jest-config-20.0.1.tgz#c6934f585c3e1775c96133efb302f986c3909ad8"
+  dependencies:
+    chalk "^1.1.3"
+    glob "^7.1.1"
+    jest-environment-jsdom "^20.0.1"
+    jest-environment-node "^20.0.1"
+    jest-jasmine2 "^20.0.1"
+    jest-matcher-utils "^20.0.1"
+    jest-regex-util "^20.0.1"
+    jest-resolve "^20.0.1"
+    jest-validate "^20.0.1"
+    pretty-format "^20.0.1"
+
 jest-diff@^20.0.0:
   version "20.0.0"
   resolved "http://registry.npm.taobao.org/jest-diff/download/jest-diff-20.0.0.tgz#d6e9190b57e0333c6706ef28d62b1cb23042d7eb"
@@ -2440,9 +2485,18 @@ jest-diff@^20.0.0:
     jest-matcher-utils "^20.0.0"
     pretty-format "^20.0.0"
 
-jest-docblock@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest-docblock/download/jest-docblock-20.0.0.tgz#5b647c4af36f52dae74df1949a8cb418d146ad3a"
+jest-diff@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-diff/download/jest-diff-20.0.1.tgz#2567c80c324243328321386f8871a28ec9d350ac"
+  dependencies:
+    chalk "^1.1.3"
+    diff "^3.2.0"
+    jest-matcher-utils "^20.0.1"
+    pretty-format "^20.0.1"
+
+jest-docblock@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-docblock/download/jest-docblock-20.0.1.tgz#055e0bbcb76798198479901f92d2733bf619f854"
 
 jest-environment-jsdom@^20.0.0:
   version "20.0.0"
@@ -2452,6 +2506,14 @@ jest-environment-jsdom@^20.0.0:
     jest-util "^20.0.0"
     jsdom "^9.12.0"
 
+jest-environment-jsdom@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-environment-jsdom/download/jest-environment-jsdom-20.0.1.tgz#2d29f81368987d387c70ce4f500c6aa560f9b4f7"
+  dependencies:
+    jest-mock "^20.0.1"
+    jest-util "^20.0.1"
+    jsdom "^9.12.0"
+
 jest-environment-node@^20.0.0:
   version "20.0.0"
   resolved "http://registry.npm.taobao.org/jest-environment-node/download/jest-environment-node-20.0.0.tgz#7016d8d1270cbc1ed71a10f242c78324297e1db8"
@@ -2459,13 +2521,20 @@ jest-environment-node@^20.0.0:
     jest-mock "^20.0.0"
     jest-util "^20.0.0"
 
-jest-haste-map@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest-haste-map/download/jest-haste-map-20.0.0.tgz#3b8d9255dfe2a6a96e516fe71dafd415e1b5d65f"
+jest-environment-node@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-environment-node/download/jest-environment-node-20.0.1.tgz#75ab5358072ee1efebc54f43474357d7b3d674c7"
+  dependencies:
+    jest-mock "^20.0.1"
+    jest-util "^20.0.1"
+
+jest-haste-map@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-haste-map/download/jest-haste-map-20.0.1.tgz#e6ba4db99ab512e7c081a5b0a0af731d0e193d56"
   dependencies:
     fb-watchman "^2.0.0"
     graceful-fs "^4.1.11"
-    jest-docblock "^20.0.0"
+    jest-docblock "^20.0.1"
     micromatch "^2.3.11"
     sane "~1.6.0"
     worker-farm "^1.3.1"
@@ -2484,12 +2553,33 @@ jest-jasmine2@^20.0.0:
     once "^1.4.0"
     p-map "^1.1.1"
 
+jest-jasmine2@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-jasmine2/download/jest-jasmine2-20.0.1.tgz#675772b1fd32ad74e92e8ae8282f8ea71d1de168"
+  dependencies:
+    chalk "^1.1.3"
+    graceful-fs "^4.1.11"
+    jest-diff "^20.0.1"
+    jest-matcher-utils "^20.0.1"
+    jest-matchers "^20.0.1"
+    jest-message-util "^20.0.1"
+    jest-snapshot "^20.0.1"
+    once "^1.4.0"
+    p-map "^1.1.1"
+
 jest-matcher-utils@^20.0.0:
   version "20.0.0"
   resolved "http://registry.npm.taobao.org/jest-matcher-utils/download/jest-matcher-utils-20.0.0.tgz#2c5d9dd11670c5418ffc78baecf9094db9e91e09"
   dependencies:
     chalk "^1.1.3"
     pretty-format "^20.0.0"
+
+jest-matcher-utils@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-matcher-utils/download/jest-matcher-utils-20.0.1.tgz#31aef67f59535af3c2271a3a3685db604dbd1622"
+  dependencies:
+    chalk "^1.1.3"
+    pretty-format "^20.0.1"
 
 jest-matchers@^20.0.0:
   version "20.0.0"
@@ -2500,9 +2590,26 @@ jest-matchers@^20.0.0:
     jest-message-util "^20.0.0"
     jest-regex-util "^20.0.0"
 
+jest-matchers@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-matchers/download/jest-matchers-20.0.1.tgz#053b7654ce60129268f39992886e987a5201bb90"
+  dependencies:
+    jest-diff "^20.0.1"
+    jest-matcher-utils "^20.0.1"
+    jest-message-util "^20.0.1"
+    jest-regex-util "^20.0.1"
+
 jest-message-util@^20.0.0:
   version "20.0.0"
   resolved "http://registry.npm.taobao.org/jest-message-util/download/jest-message-util-20.0.0.tgz#060bac1980bd5e11134e8e1c19c94863d937c727"
+  dependencies:
+    chalk "^1.1.3"
+    micromatch "^2.3.11"
+    slash "^1.0.0"
+
+jest-message-util@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-message-util/download/jest-message-util-20.0.1.tgz#ac21cb055a6a5786b7f127ac7e705df5ffb1c335"
   dependencies:
     chalk "^1.1.3"
     micromatch "^2.3.11"
@@ -2512,15 +2619,23 @@ jest-mock@^20.0.0:
   version "20.0.0"
   resolved "http://registry.npm.taobao.org/jest-mock/download/jest-mock-20.0.0.tgz#3c54b94fe502ed57f2e602fab22ab196a7aa4b95"
 
+jest-mock@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-mock/download/jest-mock-20.0.1.tgz#f4cca2e87e441b66fabe4ead6a6d61773ec0773a"
+
 jest-regex-util@^20.0.0:
   version "20.0.0"
   resolved "http://registry.npm.taobao.org/jest-regex-util/download/jest-regex-util-20.0.0.tgz#7f6051e9d00fdcccca52bade50aabdd9919bcfd2"
 
-jest-resolve-dependencies@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest-resolve-dependencies/download/jest-resolve-dependencies-20.0.0.tgz#616c6976c52e49d13e6420b1bcc8f380e701408f"
+jest-regex-util@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-regex-util/download/jest-regex-util-20.0.1.tgz#ecbcca8fbe4e217bca7f6f42a9b831d051224dc4"
+
+jest-resolve-dependencies@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-resolve-dependencies/download/jest-resolve-dependencies-20.0.1.tgz#38fc012191775b0b277fabebb37aa8282e26846f"
   dependencies:
-    jest-regex-util "^20.0.0"
+    jest-regex-util "^20.0.1"
 
 jest-resolve@^20.0.0:
   version "20.0.0"
@@ -2530,21 +2645,29 @@ jest-resolve@^20.0.0:
     is-builtin-module "^1.0.0"
     resolve "^1.3.2"
 
-jest-runtime@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest-runtime/download/jest-runtime-20.0.0.tgz#4c78c08573ffaeba9b8ceb096f705b75d5fb54a1"
+jest-resolve@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-resolve/download/jest-resolve-20.0.1.tgz#cace553663f25c703dc977a4ce176e29eda92772"
+  dependencies:
+    browser-resolve "^1.11.2"
+    is-builtin-module "^1.0.0"
+    resolve "^1.3.2"
+
+jest-runtime@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-runtime/download/jest-runtime-20.0.1.tgz#384f9298b8e8a177870c6d9ad0023db10ddcaedc"
   dependencies:
     babel-core "^6.0.0"
-    babel-jest "^20.0.0"
+    babel-jest "^20.0.1"
     babel-plugin-istanbul "^4.0.0"
     chalk "^1.1.3"
     convert-source-map "^1.4.0"
     graceful-fs "^4.1.11"
-    jest-config "^20.0.0"
-    jest-haste-map "^20.0.0"
-    jest-regex-util "^20.0.0"
-    jest-resolve "^20.0.0"
-    jest-util "^20.0.0"
+    jest-config "^20.0.1"
+    jest-haste-map "^20.0.1"
+    jest-regex-util "^20.0.1"
+    jest-resolve "^20.0.1"
+    jest-util "^20.0.1"
     json-stable-stringify "^1.0.1"
     micromatch "^2.3.11"
     strip-bom "3.0.0"
@@ -2561,6 +2684,17 @@ jest-snapshot@^20.0.0:
     natural-compare "^1.4.0"
     pretty-format "^20.0.0"
 
+jest-snapshot@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-snapshot/download/jest-snapshot-20.0.1.tgz#3704c599705042f20ec7c95ba76a4524c744dfac"
+  dependencies:
+    chalk "^1.1.3"
+    jest-diff "^20.0.1"
+    jest-matcher-utils "^20.0.1"
+    jest-util "^20.0.1"
+    natural-compare "^1.4.0"
+    pretty-format "^20.0.1"
+
 jest-util@^20.0.0:
   version "20.0.0"
   resolved "http://registry.npm.taobao.org/jest-util/download/jest-util-20.0.0.tgz#5421322f196e884e962bc8b8bac4b009733caed9"
@@ -2573,6 +2707,18 @@ jest-util@^20.0.0:
     leven "^2.1.0"
     mkdirp "^0.5.1"
 
+jest-util@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-util/download/jest-util-20.0.1.tgz#a3e7afb67110b2c3ac77b82e9a51ca57f4ff72a1"
+  dependencies:
+    chalk "^1.1.3"
+    graceful-fs "^4.1.11"
+    jest-message-util "^20.0.1"
+    jest-mock "^20.0.1"
+    jest-validate "^20.0.1"
+    leven "^2.1.0"
+    mkdirp "^0.5.1"
+
 jest-validate@^20.0.0:
   version "20.0.0"
   resolved "http://registry.npm.taobao.org/jest-validate/download/jest-validate-20.0.0.tgz#c0832e8210190b6d5b39a46b8df536083131a7d7"
@@ -2582,11 +2728,20 @@ jest-validate@^20.0.0:
     leven "^2.1.0"
     pretty-format "^20.0.0"
 
-jest@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest/download/jest-20.0.0.tgz#58cf6abf328f2a2e3c4203890131cbe89d3b0769"
+jest-validate@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest-validate/download/jest-validate-20.0.1.tgz#a236c29e3c29e9b92a1e5da211a732f0238da928"
   dependencies:
-    jest-cli "^20.0.0"
+    chalk "^1.1.3"
+    jest-matcher-utils "^20.0.1"
+    leven "^2.1.0"
+    pretty-format "^20.0.1"
+
+jest@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/jest/download/jest-20.0.1.tgz#4e268159ccc3b659966939de817c75bfe9e0157d"
+  dependencies:
+    jest-cli "^20.0.1"
 
 jodid25519@^1.0.0:
   version "1.0.2"
@@ -2884,9 +3039,9 @@ marked@^0.3.6:
   version "0.3.6"
   resolved "http://registry.npm.taobao.org/marked/download/marked-0.3.6.tgz#b2c6c618fccece4ef86c4fc6cb8a7cbf5aeda8d7"
 
-material-ui@^0.18.0:
-  version "0.18.0"
-  resolved "http://registry.npm.taobao.org/material-ui/download/material-ui-0.18.0.tgz#fcf5eddfe87d066792bd44f09b4f7c9ca7f620d6"
+material-ui@^0.18.1:
+  version "0.18.1"
+  resolved "http://registry.npm.taobao.org/material-ui/download/material-ui-0.18.1.tgz#1c8a47d7e930ff0b07064dd8633035984a5a3569"
   dependencies:
     babel-runtime "^6.23.0"
     inline-style-prefixer "^3.0.2"
@@ -2894,10 +3049,9 @@ material-ui@^0.18.0:
     lodash.merge "^4.6.0"
     lodash.throttle "^4.1.1"
     prop-types "^15.5.7"
-    react-addons-create-fragment "^15.4.0"
-    react-addons-transition-group "^15.4.0"
     react-event-listener "^0.4.5"
-    recompose "^0.23.0"
+    react-transition-group "^1.1.2"
+    recompose "0.23.4"
     simple-assign "^0.1.0"
     warning "^3.0.0"
 
@@ -3612,9 +3766,9 @@ postcss-load-plugins@^2.3.0:
     cosmiconfig "^2.1.1"
     object-assign "^4.1.0"
 
-postcss-loader@^2.0.3:
-  version "2.0.3"
-  resolved "http://registry.npm.taobao.org/postcss-loader/download/postcss-loader-2.0.3.tgz#1aac19ef0ce78866f204c0f6299a386556c555a0"
+postcss-loader@^2.0.5:
+  version "2.0.5"
+  resolved "http://registry.npm.taobao.org/postcss-loader/download/postcss-loader-2.0.5.tgz#c19d3e8b83eb1ac316f5621ef4c0ef5b3d1b8b3a"
   dependencies:
     loader-utils "^1.x"
     postcss "^6.x"
@@ -3831,6 +3985,13 @@ pretty-format@^20.0.0:
   dependencies:
     ansi-styles "^3.0.0"
 
+pretty-format@^20.0.1:
+  version "20.0.1"
+  resolved "http://registry.npm.taobao.org/pretty-format/download/pretty-format-20.0.1.tgz#ba95329771907c189643dd251e244061ff642350"
+  dependencies:
+    ansi-regex "^2.1.1"
+    ansi-styles "^3.0.0"
+
 private@^0.1.6:
   version "0.1.7"
   resolved "http://registry.npm.taobao.org/private/download/private-0.1.7.tgz#68ce5e8a1ef0a23bb570cc28537b5332aba63ef1"
@@ -3853,7 +4014,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.4, prop-types@^15.5.7, prop-types@~15.5.7:
+prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@~15.5.7:
   version "15.5.8"
   resolved "http://registry.npm.taobao.org/prop-types/download/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
   dependencies:
@@ -3947,20 +4108,6 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-addons-create-fragment@^15.4.0:
-  version "15.5.3"
-  resolved "http://registry.npm.taobao.org/react-addons-create-fragment/download/react-addons-create-fragment-15.5.3.tgz#d0025675a9e98b2591240382c73b491251066109"
-  dependencies:
-    fbjs "^0.8.4"
-    object-assign "^4.1.0"
-
-react-addons-transition-group@^15.4.0:
-  version "15.5.2"
-  resolved "http://registry.npm.taobao.org/react-addons-transition-group/download/react-addons-transition-group-15.5.2.tgz#da6989d9cffe27dffacaedc862000ffb09ae2206"
-  dependencies:
-    fbjs "^0.8.4"
-    object-assign "^4.1.0"
-
 react-deep-force-update@^2.0.1:
   version "2.0.1"
   resolved "http://registry.npm.taobao.org/react-deep-force-update/download/react-deep-force-update-2.0.1.tgz#4f7f6c12c3e7de42f345992a3c518236fa1ecad3"
@@ -4026,6 +4173,15 @@ react-tap-event-plugin@^2.0.1:
   resolved "http://registry.npm.taobao.org/react-tap-event-plugin/download/react-tap-event-plugin-2.0.1.tgz#316beb3bc6556e29ec869a7293e89c826a9074d2"
   dependencies:
     fbjs "^0.8.6"
+
+react-transition-group@^1.1.2:
+  version "1.1.3"
+  resolved "http://registry.npm.taobao.org/react-transition-group/download/react-transition-group-1.1.3.tgz#5e02cf6e44a863314ff3c68a0c826c2d9d70b221"
+  dependencies:
+    chain-function "^1.0.0"
+    dom-helpers "^3.2.0"
+    prop-types "^15.5.6"
+    warning "^3.0.0"
 
 react@^15.5.4:
   version "15.5.4"
@@ -4096,9 +4252,9 @@ readdirp@^2.0.0:
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
 
-recompose@^0.23.0:
-  version "0.23.1"
-  resolved "http://registry.npm.taobao.org/recompose/download/recompose-0.23.1.tgz#577613e24a7ff56f9ca6b899190f8a9c0857fc20"
+recompose@0.23.4:
+  version "0.23.4"
+  resolved "http://registry.npm.taobao.org/recompose/download/recompose-0.23.4.tgz#af09e4e08424effa449c9b793037166f7b30644a"
   dependencies:
     change-emitter "^0.1.2"
     fbjs "^0.8.1"
@@ -4297,9 +4453,9 @@ sass-graph@^2.1.1:
     scss-tokenizer "^0.2.1"
     yargs "^6.6.0"
 
-sass-loader@^6.0.4:
-  version "6.0.4"
-  resolved "http://registry.npm.taobao.org/sass-loader/download/sass-loader-6.0.4.tgz#e1f20f534e8514445b9362deb566a4c40440d98d"
+sass-loader@^6.0.5:
+  version "6.0.5"
+  resolved "http://registry.npm.taobao.org/sass-loader/download/sass-loader-6.0.5.tgz#a847910f36442aa56c5985879d54eb519e24a328"
   dependencies:
     async "^2.1.5"
     clone-deep "^0.2.4"
@@ -4758,9 +4914,9 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/trim-right/download/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-ts-jest@^20.0.2:
-  version "20.0.2"
-  resolved "http://registry.npm.taobao.org/ts-jest/download/ts-jest-20.0.2.tgz#d22a48d3da305259e7e1bbbaf3f8c4bfd0b5aea7"
+ts-jest@^20.0.3:
+  version "20.0.3"
+  resolved "http://registry.npm.taobao.org/ts-jest/download/ts-jest-20.0.3.tgz#31d62afb59ecb6af14cb6bd0bcbd541a745d8f7a"
   dependencies:
     babel-jest "^20.0.0"
     babel-plugin-transform-es2015-modules-commonjs "^6.24.1"
@@ -4793,9 +4949,9 @@ tslib@^1.6.0:
   version "1.7.0"
   resolved "http://registry.npm.taobao.org/tslib/download/tslib-1.7.0.tgz#6e8366695f72961252b35167b0dd4fbeeafba491"
 
-tslint-microsoft-contrib@^4.0.1:
-  version "4.0.1"
-  resolved "http://registry.npm.taobao.org/tslint-microsoft-contrib/download/tslint-microsoft-contrib-4.0.1.tgz#9e201a1639f5859658ffcf2b4dcbb19992f8e6c0"
+tslint-microsoft-contrib@^5.0.0:
+  version "5.0.0"
+  resolved "http://registry.npm.taobao.org/tslint-microsoft-contrib/download/tslint-microsoft-contrib-5.0.0.tgz#0ff6389ce3dbc5ea103782900a7806fffa1450ff"
 
 tslint-react@^3.0.0:
   version "3.0.0"
