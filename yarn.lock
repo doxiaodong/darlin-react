@@ -734,11 +734,7 @@ caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
   version "1.0.30000665"
   resolved "http://registry.npm.taobao.org/caniuse-db/download/caniuse-db-1.0.30000665.tgz#e84f4277935f295f546f8533cb0b410a8415b972"
 
-caniuse-lite@^1.0.30000665:
-  version "1.0.30000666"
-  resolved "http://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30000666.tgz#831b63247e24fa408e20c6c546c4173d27c5a1a5"
-
-caniuse-lite@^1.0.30000669:
+caniuse-lite@^1.0.30000665, caniuse-lite@^1.0.30000669:
   version "1.0.30000669"
   resolved "http://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30000669.tgz#f312f4868722f3ce869ce934da3b536e0e393845"
 
@@ -1065,10 +1061,6 @@ crypto-browserify@^3.11.0:
     pbkdf2 "^3.0.3"
     public-encrypt "^4.0.0"
     randombytes "^2.0.0"
-
-crypto-js@^3.1.9-1:
-  version "3.1.9-1"
-  resolved "http://registry.npm.taobao.org/crypto-js/download/crypto-js-3.1.9-1.tgz#fda19e761fc077e01ffbfdc6e9fdfc59e8806cd8"
 
 css-color-names@0.0.4:
   version "0.0.4"
@@ -1938,10 +1930,6 @@ he@1.1.x:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/he/download/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
-highlight.js@^9.11.0:
-  version "9.11.0"
-  resolved "http://registry.npm.taobao.org/highlight.js/download/highlight.js-9.11.0.tgz#47f98c7399918700db2caf230ded12cec41a84ae"
-
 history@^4.5.1, history@^4.6.0:
   version "4.6.1"
   resolved "http://registry.npm.taobao.org/history/download/history-4.6.1.tgz#911cf8eb65728555a94f2b12780a0c531a14d2fd"
@@ -2476,15 +2464,6 @@ jest-config@^20.0.1:
     jest-validate "^20.0.1"
     pretty-format "^20.0.1"
 
-jest-diff@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest-diff/download/jest-diff-20.0.0.tgz#d6e9190b57e0333c6706ef28d62b1cb23042d7eb"
-  dependencies:
-    chalk "^1.1.3"
-    diff "^3.2.0"
-    jest-matcher-utils "^20.0.0"
-    pretty-format "^20.0.0"
-
 jest-diff@^20.0.1:
   version "20.0.1"
   resolved "http://registry.npm.taobao.org/jest-diff/download/jest-diff-20.0.1.tgz#2567c80c324243328321386f8871a28ec9d350ac"
@@ -2498,15 +2477,7 @@ jest-docblock@^20.0.1:
   version "20.0.1"
   resolved "http://registry.npm.taobao.org/jest-docblock/download/jest-docblock-20.0.1.tgz#055e0bbcb76798198479901f92d2733bf619f854"
 
-jest-environment-jsdom@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest-environment-jsdom/download/jest-environment-jsdom-20.0.0.tgz#a688499d817e33cdea6400c502d8d5f4aa01c808"
-  dependencies:
-    jest-mock "^20.0.0"
-    jest-util "^20.0.0"
-    jsdom "^9.12.0"
-
-jest-environment-jsdom@^20.0.1:
+jest-environment-jsdom@^20.0.0, jest-environment-jsdom@^20.0.1:
   version "20.0.1"
   resolved "http://registry.npm.taobao.org/jest-environment-jsdom/download/jest-environment-jsdom-20.0.1.tgz#2d29f81368987d387c70ce4f500c6aa560f9b4f7"
   dependencies:
@@ -2539,21 +2510,7 @@ jest-haste-map@^20.0.1:
     sane "~1.6.0"
     worker-farm "^1.3.1"
 
-jest-jasmine2@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest-jasmine2/download/jest-jasmine2-20.0.0.tgz#2a0aba92ed36ec132901cfc2a552fd7cee6fde3d"
-  dependencies:
-    chalk "^1.1.3"
-    graceful-fs "^4.1.11"
-    jest-diff "^20.0.0"
-    jest-matcher-utils "^20.0.0"
-    jest-matchers "^20.0.0"
-    jest-message-util "^20.0.0"
-    jest-snapshot "^20.0.0"
-    once "^1.4.0"
-    p-map "^1.1.1"
-
-jest-jasmine2@^20.0.1:
+jest-jasmine2@^20.0.0, jest-jasmine2@^20.0.1:
   version "20.0.1"
   resolved "http://registry.npm.taobao.org/jest-jasmine2/download/jest-jasmine2-20.0.1.tgz#675772b1fd32ad74e92e8ae8282f8ea71d1de168"
   dependencies:
@@ -2567,28 +2524,12 @@ jest-jasmine2@^20.0.1:
     once "^1.4.0"
     p-map "^1.1.1"
 
-jest-matcher-utils@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest-matcher-utils/download/jest-matcher-utils-20.0.0.tgz#2c5d9dd11670c5418ffc78baecf9094db9e91e09"
-  dependencies:
-    chalk "^1.1.3"
-    pretty-format "^20.0.0"
-
-jest-matcher-utils@^20.0.1:
+jest-matcher-utils@^20.0.0, jest-matcher-utils@^20.0.1:
   version "20.0.1"
   resolved "http://registry.npm.taobao.org/jest-matcher-utils/download/jest-matcher-utils-20.0.1.tgz#31aef67f59535af3c2271a3a3685db604dbd1622"
   dependencies:
     chalk "^1.1.3"
     pretty-format "^20.0.1"
-
-jest-matchers@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest-matchers/download/jest-matchers-20.0.0.tgz#55498637bbb58f164d97c73610fb8d016dfac770"
-  dependencies:
-    jest-diff "^20.0.0"
-    jest-matcher-utils "^20.0.0"
-    jest-message-util "^20.0.0"
-    jest-regex-util "^20.0.0"
 
 jest-matchers@^20.0.1:
   version "20.0.1"
@@ -2599,15 +2540,7 @@ jest-matchers@^20.0.1:
     jest-message-util "^20.0.1"
     jest-regex-util "^20.0.1"
 
-jest-message-util@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest-message-util/download/jest-message-util-20.0.0.tgz#060bac1980bd5e11134e8e1c19c94863d937c727"
-  dependencies:
-    chalk "^1.1.3"
-    micromatch "^2.3.11"
-    slash "^1.0.0"
-
-jest-message-util@^20.0.1:
+jest-message-util@^20.0.0, jest-message-util@^20.0.1:
   version "20.0.1"
   resolved "http://registry.npm.taobao.org/jest-message-util/download/jest-message-util-20.0.1.tgz#ac21cb055a6a5786b7f127ac7e705df5ffb1c335"
   dependencies:
@@ -2623,11 +2556,7 @@ jest-mock@^20.0.1:
   version "20.0.1"
   resolved "http://registry.npm.taobao.org/jest-mock/download/jest-mock-20.0.1.tgz#f4cca2e87e441b66fabe4ead6a6d61773ec0773a"
 
-jest-regex-util@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest-regex-util/download/jest-regex-util-20.0.0.tgz#7f6051e9d00fdcccca52bade50aabdd9919bcfd2"
-
-jest-regex-util@^20.0.1:
+jest-regex-util@^20.0.0, jest-regex-util@^20.0.1:
   version "20.0.1"
   resolved "http://registry.npm.taobao.org/jest-regex-util/download/jest-regex-util-20.0.1.tgz#ecbcca8fbe4e217bca7f6f42a9b831d051224dc4"
 
@@ -2672,17 +2601,6 @@ jest-runtime@^20.0.1:
     micromatch "^2.3.11"
     strip-bom "3.0.0"
     yargs "^7.0.2"
-
-jest-snapshot@^20.0.0:
-  version "20.0.0"
-  resolved "http://registry.npm.taobao.org/jest-snapshot/download/jest-snapshot-20.0.0.tgz#fbe51d94ed1c6cd23808bb7ef82e58ca12a0ccf7"
-  dependencies:
-    chalk "^1.1.3"
-    jest-diff "^20.0.0"
-    jest-matcher-utils "^20.0.0"
-    jest-util "^20.0.0"
-    natural-compare "^1.4.0"
-    pretty-format "^20.0.0"
 
 jest-snapshot@^20.0.1:
   version "20.0.1"

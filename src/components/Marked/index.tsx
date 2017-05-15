@@ -1,6 +1,7 @@
 import * as React from 'react'
 import * as xss from 'xss'
 import { loadScript } from 'base/utils'
+import { CDN } from 'base/constants'
 import markedService from './service'
 
 import './marked.global.scss'
@@ -18,8 +19,15 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
 
   componentDidMount() {
     loadScript(
-      'Emojione',
-      'https://cdn.tristana.cc/ajax/libs/emojione/2.2.7/lib/js/emojione.min.js',
+      'emojione',
+      `${CDN}/ajax/libs/emojione/2.2.7/lib/js/emojione.min.js`,
+      () => {
+        this.setState({})
+      }
+    )
+    loadScript(
+      'hljs',
+      `${CDN}/ajax/libs/highlight.js/9.11.0/highlight.min.js`,
       () => {
         this.setState({})
       }
@@ -49,7 +57,7 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
     this.ele = ele
     loadScript(
       'MathJax',
-      'https://cdn.tristana.cc/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML',
+      `${CDN}/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML`,
       this.updateJax.bind(this)
     )
   }

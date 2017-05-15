@@ -1,5 +1,5 @@
 import * as marked from 'marked'
-import * as hljs from 'highlight.js'
+// import * as hljs from 'highlight.js'
 
 export class MarkedService {
   private options: any = {}
@@ -21,7 +21,7 @@ export class MarkedService {
         if (language) {
           lang = ' lang-' + language
         }
-        const html: string = hljs.highlightAuto(text).value
+        const html: string = window['hljs'] ? hljs.highlightAuto(text).value : text
         const lines: string = new Array(html.split(/\n/).length + 1).join('<span></span>')
         return `
           <pre><code class="hljs${lang}"><span class="hjln">${lines}</span>${html}</code></pre>

@@ -33,6 +33,10 @@ module.exports = function(option) {
       ]
     },
 
+    externals: {
+      'crypto-js': 'CryptoJS'
+    },
+
     module: {
       rules: [
         {
@@ -132,7 +136,8 @@ module.exports = function(option) {
           collapseWhitespace: true,
           removeComments: true
         },
-        chunksSortMode: 'dependency'
+        chunksSortMode: 'dependency',
+        cdn: 'https://cdn.tristana.cc'
       }),
 
       // moment 语言包只加载 zh-cn
