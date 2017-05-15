@@ -16,11 +16,6 @@
 </head>
 <body>
   <div class="h100" id="app"></div>
-  <script src="<%= htmlWebpackPlugin.options.cdn %>/ajax/libs/crypto-js/3.1.9-1/core.min.js"></script>
-  <script src="<%= htmlWebpackPlugin.options.cdn %>/ajax/libs/crypto-js/3.1.9-1/x64-core.min.js"></script>
-  <script src="<%= htmlWebpackPlugin.options.cdn %>/ajax/libs/crypto-js/3.1.9-1/sha512.min.js"></script>
-  <script src="<%= htmlWebpackPlugin.options.cdn %>/ajax/libs/crypto-js/3.1.9-1/md5.min.js"></script>
-  <script src="<%= htmlWebpackPlugin.options.cdn %>/ajax/libs/device.js/0.2.7/device.min.js"></script>
   <script>
     if (navigator.serviceWorker) {
       navigator.serviceWorker.register('/sw.js').then(function(registration) {
@@ -30,5 +25,10 @@
       })
     }
 	</script>
+  <script src="<%= htmlWebpackPlugin.options.cdn %>/ajax/libs/crypto-js/3.1.9-1/core.min.js"></script>
+  <script src="<%= htmlWebpackPlugin.options.cdn %>/ajax/libs/crypto-js/3.1.9-1/x64-core.min.js"></script>
+  <script src="<%= htmlWebpackPlugin.options.cdn %>/ajax/libs/crypto-js/3.1.9-1/sha512.min.js"></script>
+  <script src="<%= htmlWebpackPlugin.options.cdn %>/ajax/libs/crypto-js/3.1.9-1/md5.min.js"></script>
+  <script src="<%= htmlWebpackPlugin.options.cdn %>/ajax/libs/device.js/0.2.7/device.min.js"></script>
 </body>
 </html>
