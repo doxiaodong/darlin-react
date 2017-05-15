@@ -8,7 +8,7 @@
     "start:proxy-prod": "npm run server:proxy-prod",
     "tslint": "tslint",
     "test": "jest --coverage",
-    "lint": "npm run tslint \"src/**/*.tsx\"",
+    "lint": "npm run tslint \"src/**/*.tsx\" & npm run tslint \"src/**/*.ts\"",
     "server": "webpack-dev-server --config config/dev.js --progress --profile --watch --content-base src/",
     "server:proxy-prod": "webpack-dev-server --config config/dev.js --progress --profile --watch --content-base src/",
     "prebuild:prod": "rm -rf dist && npm run lint && npm test",
