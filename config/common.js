@@ -51,6 +51,7 @@ module.exports = function(option) {
                 loader: 'css-loader',
                 options: {
                   modules: true,
+                  localIdentName: '[local]__[hash:base64:6]',
                   minimize: isProd
                 }
               },
