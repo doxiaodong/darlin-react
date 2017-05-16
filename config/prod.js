@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge') // Used to merge webpack configs
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const BabiliPlugin = require("babili-webpack-plugin")
 const commonConfig = require('./common') // The settings that are common to prod and dev
 const helpers = require('./helpers')
 
@@ -67,35 +68,7 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
       debug: false
     }),
 
-    /** 
-     * Plugin: UglifyJSPlugin
-     * Description: Minimize all JavaScript output of chunks.
-     * Loaders are switched into minimizing mode.
-     *
-     * See: https://webpack.js.org/plugins/uglifyjs-webpack-plugin/
-     */
-    new UglifyJSPlugin({
-      sourceMap: true,
-      beautify: false, //prod
-      output: {
-        comments: false
-      }, //prod
-      mangle: {
-        screw_ie8: true
-      }, //prod
-      compress: {
-        screw_ie8: true,
-        warnings: false,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        join_vars: true
-      }
-    })
+    new BabiliPlugin()
 
   ],
 
