@@ -7,12 +7,11 @@ cache:
   directories:
     - node_modules
 
-before_script:
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - sleep 3
+script:
+  - npm run build:prod
 
-script: $TRAVIS_BUILD_DIR/.travis.sh
-
-sudo: required
+notifications:
+  webhooks:
+    urls:
+      - https://jenkins.darlin.me/job/darlin.me/build?token=069d9f19a9cebf4adec7be0bd55c10d6
+    on_success: change
