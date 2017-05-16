@@ -1,5 +1,9 @@
 import * as React from 'react'
-import * as xss from 'xss'
+import { observer } from 'mobx-react'
+import {
+  observable,
+  runInAction
+} from 'mobx'
 import { loadScript } from 'base/utils'
 import { CDN } from 'base/constants'
 import markedService from './service'
@@ -10,12 +14,13 @@ import './number.global.scss'
 
 const ms = markedService.init()
 // for emojione class name
-const whiteList = xss.whiteList
-whiteList.img.push('class')
-
+@observer
 export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> {
 
   ele
+
+  @observable filterXSS
+  @observable whiteList
 
   async componentDidMount() {
     await Promise.all([
@@ -26,9 +31,17 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
       loadScript(
         'hljs',
         `${CDN}/ajax/libs/highlight.js/9.11.0/highlight.min.js`
+      ),
+      loadScript(
+        'filterXSS',
+        `${CDN}/ajax/libs/js-xss/0.3.3/xss.min.js`
       )
     ])
-    this.setState({})
+    runInAction(('xss'), () => {
+      this.filterXSS = window['filterXSS']
+      this.whiteList = this.filterXSS.whiteList
+      this.whiteList.img.push('class')
+    })
   }
 
   componentDidUpdate() {
@@ -63,10 +76,8 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
     const { md, safe } = this.props
     const emojiMd = this.updateEmojione(md)
     let html = ms(emojiMd)
-    if (safe) {
-      console.log('before', html)
-      html = xss(html, { whiteList })
-      console.log('after', html)
+    if (safe && this.filterXSS) {
+      html = this.filterXSS(html, { whiteList: this.whiteList })
     }
     return <div ref={this.ref} className="markdown" dangerouslySetInnerHTML={{ __html: html }} />
   }
