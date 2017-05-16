@@ -2,7 +2,7 @@ import * as React from 'react'
 import { observer } from 'mobx-react'
 import {
   observable,
-  runInAction
+  action
 } from 'mobx'
 import { loadScript } from 'base/utils'
 import { CDN } from 'base/constants'
@@ -19,8 +19,10 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
 
   ele
 
-  @observable filterXSS
-  @observable whiteList
+  filterXSS
+  whiteList
+
+  @observable html = ''
 
   async componentDidMount() {
     await Promise.all([
@@ -37,15 +39,25 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
         `${CDN}/ajax/libs/js-xss/0.3.3/xss.min.js`
       )
     ])
-    runInAction(('xss'), () => {
-      this.filterXSS = window['filterXSS']
-      this.whiteList = this.filterXSS.whiteList
-      this.whiteList.img.push('class')
-    })
+    this.filterXSS = window['filterXSS']
+    this.whiteList = this.filterXSS.whiteList
+    this.whiteList.img.push('class')
+
+    this.updateHtml()
   }
 
   componentDidUpdate() {
     this.updateJax()
+  }
+
+  @action
+  updateHtml() {
+    const { md, safe } = this.props
+    const emojiMd = this.updateEmojione(md)
+    this.html = ms(emojiMd)
+    if (safe && this.filterXSS) {
+      this.html = this.filterXSS(this.html, { whiteList: this.whiteList })
+    }
   }
 
   updateEmojione(md) {
@@ -73,13 +85,7 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
   }
 
   render() {
-    const { md, safe } = this.props
-    const emojiMd = this.updateEmojione(md)
-    let html = ms(emojiMd)
-    if (safe && this.filterXSS) {
-      html = this.filterXSS(html, { whiteList: this.whiteList })
-    }
-    return <div ref={this.ref} className="markdown" dangerouslySetInnerHTML={{ __html: html }} />
+    return <div ref={this.ref} className="markdown" dangerouslySetInnerHTML={{ __html: this.html }} />
   }
 
 }
