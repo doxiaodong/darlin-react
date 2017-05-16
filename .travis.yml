@@ -9,9 +9,3 @@ cache:
 
 script:
   - npm run build:prod
-
-notifications:
-  webhooks:
-    urls:
-      - https://jenkins.darlin.me/job/darlin.me/build?token=069d9f19a9cebf4adec7be0bd55c10d6
-    on_success: always

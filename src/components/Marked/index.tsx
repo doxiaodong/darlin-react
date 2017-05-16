@@ -17,21 +17,18 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
 
   ele
 
-  componentDidMount() {
-    loadScript(
-      'emojione',
-      `${CDN}/ajax/libs/emojione/2.2.7/lib/js/emojione.min.js`,
-      () => {
-        this.setState({})
-      }
-    )
-    loadScript(
-      'hljs',
-      `${CDN}/ajax/libs/highlight.js/9.11.0/highlight.min.js`,
-      () => {
-        this.setState({})
-      }
-    )
+  async componentDidMount() {
+    await Promise.all([
+      loadScript(
+        'emojione',
+        `${CDN}/ajax/libs/emojione/2.2.7/lib/js/emojione.min.js`
+      ),
+      loadScript(
+        'hljs',
+        `${CDN}/ajax/libs/highlight.js/9.11.0/highlight.min.js`
+      )
+    ])
+    this.setState({})
   }
 
   componentDidUpdate() {
@@ -53,13 +50,13 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
     }
   }
 
-  ref = (ele) => {
+  ref = async (ele) => {
     this.ele = ele
-    loadScript(
+    await loadScript(
       'MathJax',
-      `${CDN}/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML`,
-      this.updateJax.bind(this)
+      `${CDN}/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML`
     )
+    this.updateJax()
   }
 
   render() {
