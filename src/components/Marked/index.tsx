@@ -64,7 +64,9 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
     const emojiMd = this.updateEmojione(md)
     let html = ms(emojiMd)
     if (safe) {
+      console.log('before', html)
       html = xss(html, { whiteList })
+      console.log('after', html)
     }
     return <div ref={this.ref} className="markdown" dangerouslySetInnerHTML={{ __html: html }} />
   }
