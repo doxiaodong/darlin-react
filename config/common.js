@@ -133,6 +133,7 @@ module.exports = function(option) {
         template: 'src/index.html',
         minify: {
           minifyCSS: true,
+          minifyJS: true,
           collapseWhitespace: true,
           removeComments: true
         },
