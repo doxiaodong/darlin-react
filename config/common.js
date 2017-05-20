@@ -92,6 +92,30 @@ module.exports = function(option) {
               'sass-loader'
             ]
           })
+        },
+        {
+          test: /\.(jpe?g|png|gif)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                hash: 'sha512',
+                digest: 'hex',
+                name: helpers.static + '[name]-[hash]'
+              }
+            },
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                gifsicle: {
+                  interlaced: false
+                },
+                optipng: {
+                  optimizationLevel: 7
+                }
+              }
+            }
+          ]
         }
       ]
     },

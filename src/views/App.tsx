@@ -2,7 +2,10 @@ import * as React from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 // import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
-import { Route } from 'react-router-dom'
+import {
+  Route,
+  Switch
+} from 'react-router-dom'
 
 import { Common } from './Common'
 import { ViewHome } from './Home'
@@ -10,6 +13,7 @@ import { ViewHome } from './Home'
 import { ViewArticleList } from './Article/List'
 import { ViewArticleDetail } from './Article/Detail'
 import { ViewSelf } from './Self'
+import { ViewNotfound } from './Notfound'
 
 import 'styles/global.scss'
 
@@ -27,10 +31,13 @@ class App extends React.Component<{}, {}> {
     return (
       <MuiThemeProvider muiTheme={theme}>
         <Common>
-          <Route exact={true} path="/" component={ViewHome} />
-          <Route exact={true} path="/article/:category" component={ViewArticleList} />
-          <Route path="/article/:category/:url" component={ViewArticleDetail} />
-          <Route path="/self/links" component={ViewSelf} />
+          <Switch>
+            <Route exact={true} path="/" component={ViewHome} />
+            <Route exact={true} path="/article/:category" component={ViewArticleList} />
+            <Route path="/article/:category/:url" component={ViewArticleDetail} />
+            <Route path="/self/links" component={ViewSelf} />
+            <Route component={ViewNotfound} />
+          </Switch>
         </Common>
       </MuiThemeProvider>
     )
