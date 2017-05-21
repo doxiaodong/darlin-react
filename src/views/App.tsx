@@ -35,10 +35,10 @@ class App extends React.Component<{}, {}> {
           <Switch>
             <Route exact={true} path="/" component={ViewHome} />
             <Route exact={true} path="/article/:category" component={ViewArticleList} />
-            <Route path="/article/:category/:url" component={ViewArticleDetail} />
-            <Route path="/self/links" component={ViewSelf} />
+            <Route exact={true} path="/article/:category/:url" component={ViewArticleDetail} />
+            <Route exact={true} path="/self/links" component={ViewSelf} />
 
-            <Route path="/404" component={ViewNotfound} />
+            <Route exact={true} path="/404" component={ViewNotfound} />
             <Route render={() => (<Redirect to="/404" />)} />
           </Switch>
         </Common>
