@@ -4,6 +4,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 // import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import {
   Route,
+  Redirect,
   Switch
 } from 'react-router-dom'
 
@@ -36,7 +37,9 @@ class App extends React.Component<{}, {}> {
             <Route exact={true} path="/article/:category" component={ViewArticleList} />
             <Route path="/article/:category/:url" component={ViewArticleDetail} />
             <Route path="/self/links" component={ViewSelf} />
-            <Route component={ViewNotfound} />
+
+            <Route path="/404" component={ViewNotfound} />
+            <Route render={() => (<Redirect to="/404" />)} />
           </Switch>
         </Common>
       </MuiThemeProvider>
