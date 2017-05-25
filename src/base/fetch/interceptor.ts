@@ -3,12 +3,12 @@ import {
   getCookie,
   getAESToken
 } from 'base/utils'
+import { apiPrefix } from 'base/fetch'
 import snackStore from 'stores/snack'
 import i18nStore from 'stores/i18n'
 
 export const corsInterceptor = new Interceptor({
   cors: {
-    id: 0,
     request(url, config) {
       config.mode = 'cors'
       config.credentials = 'include'
@@ -18,9 +18,17 @@ export const corsInterceptor = new Interceptor({
   }
 })
 
+export const prefixInterceptor = new Interceptor({
+  prefix: {
+    request(url, config) {
+      url = apiPrefix + url
+      return Promise.resolve([url, config])
+    }
+  }
+})
+
 export const tokenInterceptor = new Interceptor({
   token: {
-    id: 1,
     request(url, config) {
       const headers = config.headers || new Headers()
 
@@ -36,7 +44,6 @@ export const tokenInterceptor = new Interceptor({
 
 export const errorInterceptor = new Interceptor({
   error: {
-    id: 2,
     async error(res) {
       let errorCode
       try {
@@ -58,6 +65,9 @@ export const errorInterceptor = new Interceptor({
 })
 
 // merge
-const interceptors = corsInterceptor.merge(tokenInterceptor).merge(errorInterceptor)
+const interceptors = corsInterceptor
+  .merge(prefixInterceptor)
+  .merge(tokenInterceptor)
+  .merge(errorInterceptor)
 
 export default interceptors

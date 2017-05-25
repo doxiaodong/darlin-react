@@ -1,8 +1,5 @@
-import {
-  fetchClient,
-  apiPrefix
-} from 'base/fetch'
+import { fetchClient } from 'base/fetch'
 
 export function getLinks() {
-  return fetchClient.get(`${apiPrefix}/links/?format=json`)
+  return fetchClient.get('/links/?format=json')
 }
