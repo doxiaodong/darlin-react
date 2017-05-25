@@ -69,10 +69,11 @@ export class Toaster {
   }
 
   getLevels(levels?: { [key: string]: string }): { [key: string]: string } {
-    return Object.assign({
+    return {
       resolve: 'success',
-      reject: 'error'
-    }, levels)
+      reject: 'error',
+      ...levels
+    }
   }
 
   exception(exception: any, failureText?: string, levels?: { [key: string]: string }) {

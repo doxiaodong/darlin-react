@@ -43,7 +43,7 @@ export class MarkedService {
   }
 
   setOptions(obj: any) {
-    this.options = Object.assign({}, obj)
+    this.options = { ...obj }
   }
 
   init(): MarkedStatic {
