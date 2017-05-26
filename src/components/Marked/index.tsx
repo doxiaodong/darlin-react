@@ -28,15 +28,15 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
     await Promise.all([
       loadScript(
         'emojione',
-        `${CDN}/ajax/libs/emojione/2.2.7/lib/js/emojione.min.js`
+        `${CDN}/emojione/2.2.7/lib/js/emojione.min.js`
       ),
       loadScript(
         'hljs',
-        `${CDN}/ajax/libs/highlight.js/9.11.0/highlight.min.js`
+        `${CDN}/highlight.js/9.11.0/highlight.min.js`
       ),
       loadScript(
         'filterXSS',
-        `${CDN}/ajax/libs/js-xss/0.3.3/xss.min.js`
+        `${CDN}/js-xss/0.3.3/xss.min.js`
       )
     ])
     this.filterXSS = window['filterXSS']
@@ -79,7 +79,7 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
     this.ele = ele
     await loadScript(
       'MathJax',
-      `${CDN}/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML`
+      `${CDN}/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML`
     )
     this.updateJax()
   }

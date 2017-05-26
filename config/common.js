@@ -162,7 +162,7 @@ module.exports = function(option) {
           removeComments: true
         },
         chunksSortMode: 'dependency',
-        cdn: 'https://cdn.tristana.cc'
+        cdn: 'https://cdn.tristana.cc/ajax/libs'
       }),
 
       // moment 语言包只加载 zh-cn
