@@ -21,7 +21,7 @@ function makeItem(item: ItemOrText, type: string): IItem {
       title: item
     }
   }
-  return Object.assign(item, { type })
+  return { ...item, type }
 }
 
 export class Toaster {

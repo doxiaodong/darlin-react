@@ -76,9 +76,16 @@
     "@types/react" "*"
     "@types/react-router" "*"
 
-"@types/react-router@*", "@types/react-router@^4.0.9":
+"@types/react-router@*":
   version "4.0.9"
   resolved "http://registry.npm.taobao.org/@types/react-router/download/@types/react-router-4.0.9.tgz#ff43a8e842358891d4d0c7acf0d11023b7951de9"
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+
+"@types/react-router@^4.0.10":
+  version "4.0.10"
+  resolved "http://registry.npm.taobao.org/@types/react-router/download/@types/react-router-4.0.10.tgz#8629cd11288e0c473e8230f347a064f919bca836"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
@@ -508,7 +515,7 @@ babel-helpers@^6.24.1:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-jest@^20.0.0, babel-jest@^20.0.3:
+babel-jest@^20.0.3:
   version "20.0.3"
   resolved "http://registry.npm.taobao.org/babel-jest/download/babel-jest-20.0.3.tgz#e4a03b13dc10389e140fc645d09ffc4ced301671"
   dependencies:
@@ -535,6 +542,14 @@ babel-plugin-istanbul@^4.0.0:
     find-up "^2.1.0"
     istanbul-lib-instrument "^1.7.1"
     test-exclude "^4.1.0"
+
+babel-plugin-istanbul@^4.1.4:
+  version "4.1.4"
+  resolved "http://registry.npm.taobao.org/babel-plugin-istanbul/download/babel-plugin-istanbul-4.1.4.tgz#18dde84bf3ce329fddf3f4103fae921456d8e587"
+  dependencies:
+    find-up "^2.1.0"
+    istanbul-lib-instrument "^1.7.2"
+    test-exclude "^4.1.1"
 
 babel-plugin-jest-hoist@^20.0.3:
   version "20.0.3"
@@ -1368,13 +1383,13 @@ clean-css@4.1.x:
   dependencies:
     source-map "0.5.x"
 
-clipboard@^1.6.1:
-  version "1.6.1"
-  resolved "http://registry.npm.taobao.org/clipboard/download/clipboard-1.6.1.tgz#65c5b654812466b0faab82dc6ba0f1d2f8e4be53"
+clipboard@^1.7.1:
+  version "1.7.1"
+  resolved "http://registry.npm.taobao.org/clipboard/download/clipboard-1.7.1.tgz#360d6d6946e99a7a1fef395e42ba92b5e9b5a16b"
   dependencies:
-    good-listener "^1.2.0"
+    good-listener "^1.2.2"
     select "^1.1.2"
-    tiny-emitter "^1.0.0"
+    tiny-emitter "^2.0.0"
 
 cliui@^2.1.0:
   version "2.1.0"
@@ -1474,7 +1489,7 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@2.9.x, commander@~2.9.0:
+commander@2.9.x, commander@^2.9.0, commander@~2.9.0:
   version "2.9.0"
   resolved "http://registry.npm.taobao.org/commander/download/commander-2.9.0.tgz#9c99094176e12240cb22d6c5146098400fe0f7d4"
   dependencies:
@@ -1680,13 +1695,14 @@ css-in-js-utils@^1.0.3:
   dependencies:
     hyphenate-style-name "^1.0.2"
 
-css-loader@^0.28.2:
-  version "0.28.3"
-  resolved "http://registry.npm.taobao.org/css-loader/download/css-loader-0.28.3.tgz#9fd5e0b8c405b6df927ba1103887015d360640ce"
+css-loader@^0.28.4:
+  version "0.28.4"
+  resolved "http://registry.npm.taobao.org/css-loader/download/css-loader-0.28.4.tgz#6cf3579192ce355e8b38d5f42dd7a1f2ec898d0f"
   dependencies:
     babel-code-frame "^6.11.0"
     css-selector-tokenizer "^0.7.0"
     cssnano ">=2.6.1 <4"
+    icss-utils "^2.1.0"
     loader-utils "^1.0.2"
     lodash.camelcase "^4.3.0"
     object-assign "^4.0.1"
@@ -2401,7 +2417,7 @@ fd-slicer@~1.0.1:
   dependencies:
     pend "~1.2.0"
 
-fetch-jsonp@^1.0.6:
+fetch-jsonp@^1.0.7:
   version "1.0.7"
   resolved "http://registry.npm.taobao.org/fetch-jsonp/download/fetch-jsonp-1.0.7.tgz#021c6abf3297d5d63824735805726edbf28976e5"
 
@@ -2651,13 +2667,6 @@ gifsicle@^3.0.0:
     bin-wrapper "^3.0.0"
     logalot "^2.0.0"
 
-glob-all@^3.1.0:
-  version "3.1.0"
-  resolved "http://registry.npm.taobao.org/glob-all/download/glob-all-3.1.0.tgz#8913ddfb5ee1ac7812656241b03d5217c64b02ab"
-  dependencies:
-    glob "^7.0.5"
-    yargs "~1.2.6"
-
 glob-base@^0.3.0:
   version "0.3.0"
   resolved "http://registry.npm.taobao.org/glob-base/download/glob-base-0.3.0.tgz#dbb164f6221b1c0b1ccf82aea328b497df0ea3c4"
@@ -2757,7 +2766,7 @@ glogg@^1.0.0:
   dependencies:
     sparkles "^1.0.0"
 
-good-listener@^1.2.0:
+good-listener@^1.2.2:
   version "1.2.2"
   resolved "http://registry.npm.taobao.org/good-listener/download/good-listener-1.2.2.tgz#d53b30cdf9313dffb7dc9a0d477096aa6d145c50"
   dependencies:
@@ -3086,9 +3095,9 @@ i18next-xhr-backend@^1.3.0, i18next-xhr-backend@^1.4.1:
   version "1.4.1"
   resolved "http://registry.npm.taobao.org/i18next-xhr-backend/download/i18next-xhr-backend-1.4.1.tgz#ade99356065f51742da9e4bc79c7bb4905a4b91d"
 
-i18next@^8.3.0:
-  version "8.3.0"
-  resolved "http://registry.npm.taobao.org/i18next/download/i18next-8.3.0.tgz#04739294a665d204cab5fe4f4dd3e9bc3750ace4"
+i18next@^8.4.0:
+  version "8.4.0"
+  resolved "http://registry.npm.taobao.org/i18next/download/i18next-8.4.0.tgz#ffdf2b5dee22c646f0a715f8f5a38a347c83a546"
 
 iconv-lite@0.4.13:
   version "0.4.13"
@@ -3101,6 +3110,12 @@ iconv-lite@~0.4.13:
 icss-replace-symbols@^1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/icss-replace-symbols/download/icss-replace-symbols-1.1.0.tgz#06ea6f83679a7749e386cfe1fe812ae5db223ded"
+
+icss-utils@^2.1.0:
+  version "2.1.0"
+  resolved "http://registry.npm.taobao.org/icss-utils/download/icss-utils-2.1.0.tgz#83f0a0ec378bf3246178b6c2ad9136f135b1c962"
+  dependencies:
+    postcss "^6.0.1"
 
 identity-obj-proxy@^3.0.0:
   version "3.0.0"
@@ -3508,6 +3523,10 @@ istanbul-lib-coverage@^1.0.1, istanbul-lib-coverage@^1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/istanbul-lib-coverage/download/istanbul-lib-coverage-1.1.0.tgz#caca19decaef3525b5d6331d701f3f3b7ad48528"
 
+istanbul-lib-coverage@^1.1.1:
+  version "1.1.1"
+  resolved "http://registry.npm.taobao.org/istanbul-lib-coverage/download/istanbul-lib-coverage-1.1.1.tgz#73bfb998885299415c93d38a3e9adf784a77a9da"
+
 istanbul-lib-hook@^1.0.6:
   version "1.0.6"
   resolved "http://registry.npm.taobao.org/istanbul-lib-hook/download/istanbul-lib-hook-1.0.6.tgz#c0866d1e81cf2d5319249510131fc16dee49231f"
@@ -3524,6 +3543,18 @@ istanbul-lib-instrument@^1.4.2, istanbul-lib-instrument@^1.7.1:
     babel-types "^6.18.0"
     babylon "^6.13.0"
     istanbul-lib-coverage "^1.1.0"
+    semver "^5.3.0"
+
+istanbul-lib-instrument@^1.7.2:
+  version "1.7.2"
+  resolved "http://registry.npm.taobao.org/istanbul-lib-instrument/download/istanbul-lib-instrument-1.7.2.tgz#6014b03d3470fb77638d5802508c255c06312e56"
+  dependencies:
+    babel-generator "^6.18.0"
+    babel-template "^6.16.0"
+    babel-traverse "^6.18.0"
+    babel-types "^6.18.0"
+    babylon "^6.13.0"
+    istanbul-lib-coverage "^1.1.1"
     semver "^5.3.0"
 
 istanbul-lib-report@^1.1.0:
@@ -4370,10 +4401,6 @@ minimist@0.0.8, minimist@~0.0.1:
   version "0.0.8"
   resolved "http://registry.npm.taobao.org/minimist/download/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
-minimist@^0.1.0:
-  version "0.1.0"
-  resolved "http://registry.npm.taobao.org/minimist/download/minimist-0.1.0.tgz#99df657a52574c21c9057497df742790b2b4c0de"
-
 minimist@^1.1.0, minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/minimist/download/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
@@ -4397,15 +4424,15 @@ mobx-react-form@^1.31.11:
   dependencies:
     lodash "^4.16.2"
 
-mobx-react@^4.1.8:
-  version "4.1.8"
-  resolved "http://registry.npm.taobao.org/mobx-react/download/mobx-react-4.1.8.tgz#5b636c01c599bbee248c05c5aab6c77a41ab07f9"
+mobx-react@^4.2.1:
+  version "4.2.1"
+  resolved "http://registry.npm.taobao.org/mobx-react/download/mobx-react-4.2.1.tgz#35324834b71ae27a7553d76ad413e5f96ba40db5"
   dependencies:
     hoist-non-react-statics "^1.2.0"
 
-mobx@^3.1.10:
-  version "3.1.10"
-  resolved "http://registry.npm.taobao.org/mobx/download/mobx-3.1.10.tgz#61171f8b347e6c15e8a671100f6ef887fe52e80e"
+mobx@^3.1.11:
+  version "3.1.11"
+  resolved "http://registry.npm.taobao.org/mobx/download/mobx-3.1.11.tgz#400b1e3c00a4249dfe36e9bca28ef36f057d4a28"
 
 moment@^2.18.1:
   version "2.18.1"
@@ -4457,9 +4484,15 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
-node-dir@^0.1.10, node-dir@^0.1.16:
+node-dir@^0.1.10:
   version "0.1.16"
   resolved "http://registry.npm.taobao.org/node-dir/download/node-dir-0.1.16.tgz#d2ef583aa50b90d93db8cdd26fcea58353957fe4"
+  dependencies:
+    minimatch "^3.0.2"
+
+node-dir@^0.1.17:
+  version "0.1.17"
+  resolved "http://registry.npm.taobao.org/node-dir/download/node-dir-0.1.17.tgz#5f5665d93351335caabef8f1c554516cf5f1e4e5"
   dependencies:
     minimatch "^3.0.2"
 
@@ -4742,7 +4775,7 @@ opn@4.0.2:
     object-assign "^4.0.1"
     pinkie-promise "^2.0.0"
 
-optimist@^0.6.1, optimist@~0.6.0:
+optimist@^0.6.1:
   version "0.6.1"
   resolved "http://registry.npm.taobao.org/optimist/download/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
   dependencies:
@@ -6313,6 +6346,16 @@ test-exclude@^4.1.0:
     read-pkg-up "^1.0.1"
     require-main-filename "^1.0.1"
 
+test-exclude@^4.1.1:
+  version "4.1.1"
+  resolved "http://registry.npm.taobao.org/test-exclude/download/test-exclude-4.1.1.tgz#4d84964b0966b0087ecc334a2ce002d3d9341e26"
+  dependencies:
+    arrify "^1.0.1"
+    micromatch "^2.3.11"
+    object-assign "^4.1.0"
+    read-pkg-up "^1.0.1"
+    require-main-filename "^1.0.1"
+
 throat@^3.0.0:
   version "3.0.0"
   resolved "http://registry.npm.taobao.org/throat/download/throat-3.0.0.tgz#e7c64c867cbb3845f10877642f7b60055b8ec0d6"
@@ -6352,9 +6395,9 @@ timers-browserify@^2.0.2:
   dependencies:
     setimmediate "^1.0.4"
 
-tiny-emitter@^1.0.0:
-  version "1.2.0"
-  resolved "http://registry.npm.taobao.org/tiny-emitter/download/tiny-emitter-1.2.0.tgz#6dc845052cb08ebefc1874723b58f24a648c3b6f"
+tiny-emitter@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/tiny-emitter/download/tiny-emitter-2.0.0.tgz#bad327adb1804b42a231afa741532bd884cd09ad"
 
 tmpl@1.0.x:
   version "1.0.4"
@@ -6402,14 +6445,15 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/trim-right/download/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-ts-jest@^20.0.4:
-  version "20.0.4"
-  resolved "http://registry.npm.taobao.org/ts-jest/download/ts-jest-20.0.4.tgz#ffe3987d48c8762cd7b6ae83518d203eca167618"
+ts-jest@^20.0.5:
+  version "20.0.5"
+  resolved "http://registry.npm.taobao.org/ts-jest/download/ts-jest-20.0.5.tgz#6cb151e718e8739529d0a79459e09f7280fe044f"
   dependencies:
-    babel-jest "^20.0.0"
+    babel-core "^6.24.1"
+    babel-plugin-istanbul "^4.1.4"
     babel-plugin-transform-es2015-modules-commonjs "^6.24.1"
+    babel-preset-jest "^20.0.3"
     fs-extra "^3.0.0"
-    glob-all "^3.1.0"
     jest-config "^20.0.0"
     jest-util "^20.0.0"
     pkg-dir "^2.0.0"
@@ -6433,7 +6477,7 @@ tsconfig@^6.0.0:
     strip-bom "^3.0.0"
     strip-json-comments "^2.0.0"
 
-tslib@^1.6.0:
+tslib@^1.7.1:
   version "1.7.1"
   resolved "http://registry.npm.taobao.org/tslib/download/tslib-1.7.1.tgz#bc8004164691923a79fe8378bbeb3da2017538ec"
 
@@ -6445,23 +6489,23 @@ tslint-react@^3.0.0:
   version "3.0.0"
   resolved "http://registry.npm.taobao.org/tslint-react/download/tslint-react-3.0.0.tgz#00c48ab7f22e91533b62bdef2c162b49447af00a"
 
-tslint@^5.3.2:
-  version "5.3.2"
-  resolved "http://registry.npm.taobao.org/tslint/download/tslint-5.3.2.tgz#e56459fb095a7307f103b84052174f5e3bbef6ed"
+tslint@^5.4.0:
+  version "5.4.0"
+  resolved "http://registry.npm.taobao.org/tslint/download/tslint-5.4.0.tgz#e5e26524ca39fe950a51416456c2f296ccb69348"
   dependencies:
     babel-code-frame "^6.22.0"
     colors "^1.1.2"
+    commander "^2.9.0"
     diff "^3.2.0"
     glob "^7.1.1"
-    optimist "~0.6.0"
     resolve "^1.3.2"
     semver "^5.3.0"
-    tslib "^1.6.0"
-    tsutils "^2.0.0"
+    tslib "^1.7.1"
+    tsutils "^2.3.0"
 
-tsutils@^2.0.0:
-  version "2.1.0"
-  resolved "http://registry.npm.taobao.org/tsutils/download/tsutils-2.1.0.tgz#5be8376c929528f65b302de9e17b0004e4c1eb20"
+tsutils@^2.3.0:
+  version "2.3.0"
+  resolved "http://registry.npm.taobao.org/tsutils/download/tsutils-2.3.0.tgz#96e661d7c2363f31adc8992ac67bbe7b7fc175e5"
 
 tty-browserify@0.0.0:
   version "0.0.0"
@@ -6498,9 +6542,9 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "http://registry.npm.taobao.org/typedarray/download/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript@^2.3.3:
-  version "2.3.3"
-  resolved "http://registry.npm.taobao.org/typescript/download/typescript-2.3.3.tgz#9639f3c3b40148e8ca97fe08a51dd1891bb6be22"
+typescript@^2.3.4:
+  version "2.3.4"
+  resolved "http://registry.npm.taobao.org/typescript/download/typescript-2.3.4.tgz#3d38321828231e434f287514959c37a82b629f42"
 
 ua-parser-js@^0.7.9:
   version "0.7.12"
@@ -6648,9 +6692,9 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
 
-validatorjs@^3.12.0:
-  version "3.12.0"
-  resolved "http://registry.npm.taobao.org/validatorjs/download/validatorjs-3.12.0.tgz#6319f4ea872a323dd459000e2cbe9e632fd4816b"
+validatorjs@^3.13.3:
+  version "3.13.3"
+  resolved "http://registry.npm.taobao.org/validatorjs/download/validatorjs-3.13.3.tgz#d9723b05c88906093e814b2f393d958e88ce0b3f"
 
 value-equal@^0.2.0:
   version "0.2.1"
@@ -6823,7 +6867,7 @@ webpack-sources@^0.2.3:
     source-list-map "^1.1.1"
     source-map "~0.5.3"
 
-webpack@^2.6.0:
+webpack@^2.6.1:
   version "2.6.1"
   resolved "http://registry.npm.taobao.org/webpack/download/webpack-2.6.1.tgz#2e0457f0abb1ac5df3ab106c69c672f236785f07"
   dependencies:
@@ -7031,12 +7075,6 @@ yargs@^8.0.1:
     which-module "^2.0.0"
     y18n "^3.2.1"
     yargs-parser "^7.0.0"
-
-yargs@~1.2.6:
-  version "1.2.6"
-  resolved "http://registry.npm.taobao.org/yargs/download/yargs-1.2.6.tgz#9c7b4a82fd5d595b2bf17ab6dcc43135432fe34b"
-  dependencies:
-    minimist "^0.1.0"
 
 yargs@~3.10.0:
   version "3.10.0"
