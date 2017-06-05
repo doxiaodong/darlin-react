@@ -1,13 +1,9 @@
 machine:
   node:
-    version: 7.10.0
+    version: 8.0.0
 dependencies:
-  pre:
-    - curl -o- -L https://yarnpkg.com/install.sh | bash
-  override:
-    - yarn install
+  cache_directories:
+    - "node_modules"
 test:
   override:
-    - npm run lint
-    - npm run test
     - npm run build:prod
