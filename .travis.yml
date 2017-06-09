@@ -3,8 +3,7 @@ language: node_js
 node_js: "8"
 
 install:
-  - npm config set registry https://registry.npmjs.org
-  - npm i
+  - npm i --registry https://registry.npmjs.org
 
 cache:
   directories:
