@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge') // Used to merge webpack configs
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const BabiliPlugin = require("babili-webpack-plugin")
 const commonConfig = require('./common') // The settings that are common to prod and dev
 const helpers = require('./helpers')
