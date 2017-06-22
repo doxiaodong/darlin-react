@@ -25,8 +25,12 @@
     "object-literal-sort-keys": false,
     "member-ordering": [
       true,
-      "static-before-instance",
-      "variables-before-functions"
+      {
+        "order": [
+          "static-field",
+          "instance-field"
+        ]
+      }
     ],
     "no-string-literal": false,
     "no-console": [
