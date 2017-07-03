@@ -13,7 +13,7 @@ export const corsInterceptor = new Interceptor({
       config.mode = 'cors'
       config.credentials = 'include'
       config.cache = 'default'
-      return Promise.resolve([url, config])
+      return Promise.resolve([url, config]) as any
     }
   }
 })
@@ -22,7 +22,7 @@ export const prefixInterceptor = new Interceptor({
   prefix: {
     request(url, config) {
       url = apiPrefix + url
-      return Promise.resolve([url, config])
+      return Promise.resolve([url, config]) as any
     }
   }
 })
@@ -37,7 +37,7 @@ export const tokenInterceptor = new Interceptor({
 
       config.headers = headers
 
-      return Promise.resolve([url, config])
+      return Promise.resolve([url, config]) as any
     }
   }
 })
