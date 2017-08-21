@@ -65,7 +65,9 @@ export class Loadings {
 
   handle(name: string) {
     this.tryAdd(name)
+    /* tslint:disable */
     const loadings = this
+    /* tslint:enable */
     return replaceMethod((origin) => function(...args) {
       const promise = origin.apply(this, args)
       return loadings.promise(name, promise)

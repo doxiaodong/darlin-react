@@ -20,5 +20,5 @@ const hotRender = (Component) =>
 
 hotRender(App)
 if (module['hot']) {
-  module['hot'].accept('views/App', () => hotRender(App))
+  module['hot'].accept('views/App', () => hotRender(App['default']))
 }

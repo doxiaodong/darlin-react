@@ -46,9 +46,9 @@ export class CategoryStore {
       return categories
     }
 
-    const categories = await getCategoriesAsync()
+    const retCategories = await getCategoriesAsync()
     return runInAction('getCategories', () => {
-      return this.categories = categories
+      return this.categories = retCategories
     })
   }
 

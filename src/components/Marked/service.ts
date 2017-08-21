@@ -30,7 +30,7 @@ export class MarkedService {
     })
   }
 
-  setRenderer(obj: any): MarkedStatic {
+  setRenderer(obj: any) {
     const render = new marked.Renderer()
     const o = Object.keys(obj)
     let l = o.length
@@ -46,7 +46,7 @@ export class MarkedService {
     this.options = { ...obj }
   }
 
-  init(): MarkedStatic {
+  init() {
     return marked
   }
 }

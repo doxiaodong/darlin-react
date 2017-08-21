@@ -100,9 +100,9 @@ export class Toaster {
 
   handle(successText?: string, failureText?: string, levels?: { [key: string]: string }) {
     levels = this.getLevels(levels)
-
+    /* tslint:disable */
     const me = this
-
+    /* tslint:enable */
     return replaceMethod((origin) => function(...args) {
       const promise = origin.apply(this, args)
       return me.promise(promise, successText, failureText, levels)
