@@ -66,5 +66,7 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
 
   ],
 
-  node: false
+  node: {
+    global: true
+  }
 })
