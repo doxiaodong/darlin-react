@@ -20,5 +20,8 @@ const hotRender = (Component) =>
 
 hotRender(App)
 if (module['hot']) {
-  module['hot'].accept('views/App', () => hotRender(App['default']))
+  module['hot'].accept('views/App', () => {
+    const { default: NewApp } = require('./views/App')
+    hotRender(NewApp)
+  })
 }

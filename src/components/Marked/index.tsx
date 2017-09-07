@@ -32,7 +32,7 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
       ),
       loadScript(
         'hljs',
-        `${CDN}/highlight.js/9.11.0/highlight.min.js`
+        `${CDN}/highlight.js/9.12.0/highlight.min.js`
       ),
       loadScript(
         'filterXSS',
@@ -79,7 +79,7 @@ export class Marked extends React.Component<{ md: string, safe?: boolean }, {}> 
     this.ele = ele
     await loadScript(
       'MathJax',
-      `${CDN}/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML`
+      `${CDN}/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML`
     )
     this.updateJax()
   }

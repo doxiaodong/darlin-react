@@ -41,10 +41,7 @@ module.exports = function(option) {
       rules: [
         {
           test: /\.tsx?$/,
-          use: isDev ? [
-            'react-hot-loader/webpack',
-            'ts-loader'
-          ] : 'ts-loader'
+          use: 'ts-loader'
         },
         {
           test: /\.scss$/,
@@ -167,14 +164,6 @@ module.exports = function(option) {
 
       // moment 语言包只加载 zh-cn
       new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/)
-    ],
-
-    node: {
-      global: true,
-      crypto: 'empty',
-      module: false,
-      clearImmediate: false,
-      setImmediate: false
-    }
+    ]
   }
 }

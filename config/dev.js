@@ -19,8 +19,6 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
 
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:4000',
-    'webpack/hot/only-dev-server',
     './src/index.tsx'
   ],
   output: {
@@ -90,14 +88,5 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
         }
       }
     }
-  },
-
-  node: {
-    global: true,
-    crypto: 'empty',
-    process: true,
-    module: false,
-    clearImmediate: false,
-    setImmediate: false
   }
 })

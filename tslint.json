@@ -1,11 +1,17 @@
 {
-  "extends": ["tslint:latest", "tslint-react"],
+  "extends": [
+    "tslint:latest",
+    "tslint-react"
+  ],
   "rulesDirectory": [
     "node_modules/tslint-microsoft-contrib"
   ],
   "rules": {
     "jsx-no-lambda": false,
-    "semicolon": [true, "never"],
+    "semicolon": [
+      true,
+      "never"
+    ],
     "quotemark": [
       true,
       "single",
@@ -21,7 +27,9 @@
         "singleline": "never"
       }
     ],
-    "object-literal-key-quotes": [false],
+    "object-literal-key-quotes": [
+      false
+    ],
     "object-literal-sort-keys": false,
     "member-ordering": [
       true,
@@ -62,9 +70,14 @@
         "variable-declaration": "space"
       }
     ],
-    "ordered-imports": [false],
-    "no-consecutive-blank-lines": [true],
+    "ordered-imports": false,
+    "no-consecutive-blank-lines": [
+      true
+    ],
     "object-literal-shorthand": false,
-    "only-arrow-functions": [false]
+    "only-arrow-functions": [
+      false
+    ],
+    "no-submodule-imports": false
   }
 }

@@ -1,6 +1,6 @@
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge') // Used to merge webpack configs
-const BabiliPlugin = require("babili-webpack-plugin")
+const MinifyPlugin = require('babel-minify-webpack-plugin')
 const commonConfig = require('./common') // The settings that are common to prod and dev
 const helpers = require('./helpers')
 
@@ -62,21 +62,9 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
       dest: 'assets/i18n'
     }),
 
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false
-    }),
-
-    new BabiliPlugin()
+    new MinifyPlugin()
 
   ],
 
-  node: {
-    global: true,
-    crypto: 'empty',
-    process: false,
-    module: false,
-    clearImmediate: false,
-    setImmediate: false
-  }
+  node: false
 })
