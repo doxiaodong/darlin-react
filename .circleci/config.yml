@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Docker
           command: |
-            docker build -t registry.us-west-1.aliyuncs.com/darlin/react:latest
+            docker build . -t registry.us-west-1.aliyuncs.com/darlin/react:latest
             docker login -u $DOCKER_USER -p $DOCKER_PASS registry.us-west-1.aliyuncs.com
             docker push registry.us-west-1.aliyuncs.com/darlin/react:latest
       - save_cache:
