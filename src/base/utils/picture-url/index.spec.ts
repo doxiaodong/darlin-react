@@ -4,7 +4,7 @@ describe('@picture-url: get complete head picture', () => {
   test('should get complete url normally', () => {
     expect(
       getPictureURL('aaa/bbb/c.png')
-    ).toEqual('//media.darlin.me/aaa/bbb/c.png-headPicture')
+    ).toEqual('//media.tristana.cc/aaa/bbb/c.png-headPicture')
   })
 
   test('should get complete url third, http -> https', () => {
