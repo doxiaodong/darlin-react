@@ -20,7 +20,7 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
     path: helpers.root('dist'),
 
     // use static server
-    publicPath: '//upcdn.tristana.cc/react/',
+    publicPath: '//static.darlin.me/react/',
     // publicPath: '/',
 
     /** 
